@@ -1,0 +1,36 @@
+<h1>Editing persona</h1>
+
+<% form_for(@persona) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :cedula %><br />
+    <%= f.text_field :cedula %>
+  </p>
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </p>
+  <p>
+    <%= f.label :cargo %><br />
+    <%= f.text_field :cargo %>
+  </p>
+  <p>
+    <%= f.label :carea_id %><br />
+    <%= collection_select (:persona, :carea_id, @careas, :id, :nombre) %>
+  </p>
+  <p>
+    <%= f.label :ubicacione_id %><br />
+    <%= collection_select (:persona, :ubicacione_id, @ubicaciones, :id, :descripcion) %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @persona %> |
+<%= link_to 'Back', personas_path %>

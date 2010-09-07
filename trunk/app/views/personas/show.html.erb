@@ -1,0 +1,33 @@
+<p>
+  <b>Cedula:</b>
+  <%=h @persona.cedula %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%=h @persona.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%=h @persona.apellido %>
+</p>
+
+<p>
+  <b>Cargo:</b>
+  <%=h @persona.cargo %>
+</p>
+
+<p>
+  <b>Carea:</b>
+  <%=h @persona.carea.nombre %>
+</p>
+
+<p>
+  <b>Ubicacione:</b>
+  <%=h @persona.ubicacione.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_persona_path(@persona) %> |
+<%= link_to 'Back', personas_path %>

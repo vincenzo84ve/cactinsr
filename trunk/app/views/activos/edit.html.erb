@@ -1,0 +1,32 @@
+<h1>Editing activo</h1>
+
+<% form_for(@activo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </p>
+  <p>
+    <%= f.label :marca_id %><br />
+    <%= collection_select (:activo, :marca_id, @marcas, :id, :descripcion) %>
+  </p>
+  <p>
+    <%= f.label :modelo %><br />
+    <%= f.text_field :modelo %>
+  </p>
+  <p>
+    <%= f.label :es_equipo %><br />
+    <%= f.check_box :es_equipo %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+==============================================================================================================
+<br /><a href="#" onclick="Element.toggle('fichas')">Ficha</a>
+<div id='fichas' style="display:none;">
+	<%= render(:partial => "editar_ficha_activo")%>
+</div>
+<%= link_to 'Show', @activo %> |
+<%= link_to 'Back', activos_path %>

@@ -1,0 +1,21 @@
+<p>
+  <b>Fecha:</b>
+  <%=h @factura.fecha %>
+</p>
+
+<p>
+  <b>Secuencia</b>
+  <%=h @factura.id %>
+</p>
+
+<p>
+  <b>Proveedor:</b>
+  <%=h @factura.proveedor.nombre %>
+</p>
+
+<p>
+  <b>Factura:</b>
+  <%=h @factura.factura %>
+</p>
+
+<%= link_to 'Volver', facturas_path %>

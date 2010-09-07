@@ -1,0 +1,44 @@
+<script>
+  function pon_prefijo(val) {
+    parent.opener.document.new_existencia.activo_descripcion.value = val
+    parent.window.close();
+  }
+</script>
+
+<h1>Listing activos</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Es equipo</th>
+  </tr>
+
+<% @resultados.each do |activo| %>
+  <tr>
+    <td><%=h activo.descripcion %></td>
+    <td><%=h activo.marca.descripcion %></td>
+    <td><%=h activo.modelo %></td>
+    <td>
+    	<center><% if activo.es_equipo == true %>
+			<%=h image_tag ("activos/bulb_green.png") %>
+		<% else %>
+  			<%=h image_tag ("activos/bulb.png") %>
+		<% end %></center>
+    </td>
+    <td><a onclick="Modalbox.hide({afterHide: function() {
+                                        document.form_existencia.activo_id.value='<%= activo.id %>';
+                                        document.form_existencia.existencia_activo_id.value='<%= activo.id %>';
+                                        document.form_existencia.descripcion.value='<%= activo.descripcion %>';
+                                        document.getElementById('attr').style.display = '';
+                                        if (<%= activo.es_equipo %>){
+                                          document.getElementById('lblAttr').innerHTML = 'Serial';
+                                        }else{
+                                          document.getElementById('lblAttr').innerHTML = 'Cantidad';
+                                        }
+                                    }}); return false;" title = "Usar & Cerrar" href="#">Usar</a></td>
+    <td><%= link_to 'Show', activo %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,20 @@
+<h1>Editing factura</h1>
+
+<% form_for(@factura) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :fecha %><br />
+    <%= f.datetime_select :fecha %>
+  </p>
+  <p>
+    <%= f.label :proveedor_id %><br />
+    <%= f.text_field :proveedor_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @factura %> |
+<%= link_to 'Back', facturas_path %>

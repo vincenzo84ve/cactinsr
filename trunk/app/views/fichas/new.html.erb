@@ -1,0 +1,60 @@
+<p>
+  <b>Descripcion:</b>
+  <%=h @activo.descripcion %>
+</p>
+
+<p>
+  <b>Marca:</b>
+  <%=h @activo.marca.descripcion %>
+</p>
+
+<p>
+  <b>Modelo:</b>
+  <%=h @activo.modelo %>
+</p>
+
+<p>
+  <b>Es equipo:</b>
+  <% if @activo.es_equipo == true %>
+  	<%=h image_tag ("activos/bulb_green.png") %>
+  <% else %>
+  	<%=h image_tag ("activos/bulb.png") %>
+  <% end %>
+</p>
+===============================================================================================================
+<h1>New ficha</h1>
+
+<% form_remote_for @ficha, :url => {:controller => :fichas, :action => :create }, 
+							:complete => 'document.forms[0].reset();',
+							:update => 'lineas_ficha_tecnica' do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </p>
+  <p>
+    <%= f.label :componente %><br />
+    <%= text_field_with_auto_complete :ficha, :componente %>
+  </p>
+  <p>
+    <%= f.label :medida %><br />
+    <%= f.text_field :medida %>
+  </p>
+  <p>
+    <%= f.label :umedida_id %><br />
+    <%= collection_select (:ficha, :umedida_id, @umedidas, :id, :descripcion) %>
+  </p>
+  <p>
+    <%= f.hidden_field :activo_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<div id='lineas_ficha_tecnica'>
+	<%= render(:partial => "lineas_ficha_tecnica")%>
+</div>
+
+<%= link_to 'Back', activos_path %>

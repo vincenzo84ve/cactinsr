@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  factura_id: 1
+  activo_id: 1
+  lote: 1
+  cantidad: 1
+  saldo: 1
+
+two:
+  factura_id: 1
+  activo_id: 1
+  lote: 1
+  cantidad: 1
+  saldo: 1

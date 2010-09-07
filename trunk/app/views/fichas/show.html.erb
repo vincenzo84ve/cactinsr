@@ -1,0 +1,28 @@
+<p>
+  <b>Fecha:</b>
+  <%=h @ficha.fecha %>
+</p>
+
+<p>
+  <b>Componente:</b>
+  <%=h @ficha.componente %>
+</p>
+
+<p>
+  <b>Medida:</b>
+  <%=h @ficha.medida %>
+</p>
+
+<p>
+  <b>Umedida:</b>
+  <%=h @ficha.umedida.descripcion %>
+</p>
+
+<p>
+  <b>Activo:</b>
+  <%=h @ficha.activo_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_ficha_path(@ficha) %> |
+<%= link_to 'Back', fichas_path %>

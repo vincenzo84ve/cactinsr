@@ -1,0 +1,54 @@
+===============================================================================================================
+<h1>New ficha</h1>
+
+<% form_remote_for @ficha, :url => {:controller => :fichas, :action => :create }, 
+							:complete => 'document.forms[0].reset();',
+							:update => 'lineas_ficha_tecnica' do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </p>
+  <p>
+    <%= f.label :componente %><br />
+    <%= text_field_with_auto_complete :ficha, :componente %>
+  </p>
+  <p>
+    <%= f.label :medida %><br />
+    <%= f.text_field :medida %>
+  </p>
+  <p>
+    <%= f.label :umedida_id %><br />
+    <%= collection_select (:ficha, :umedida_id, @umedidas, :id, :descripcion) %>
+  </p>
+  <p>
+    <%= f.hidden_field :activo_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+<div id="lineas_ficha_tecnica">
+<h1>Listing fichas</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Componente</th>
+    <th>Medida</th>
+    <th>Umedida</th>
+  </tr>
+
+<% @fichas.each do |ficha| %>
+  <tr>
+    <td><%=h ficha.fecha %></td>
+    <td><%=h ficha.componente %></td>
+    <td><%=h ficha.medida %></td>
+    <td><%=h ficha.umedida.descripcion %></td>
+    <td><%=h link_to_remote 'Borrar', :update => 'lineas_ficha_tecnica', 
+										:url => ficha_url(:id => ficha.id), :method => :delete, :confirm => "¿Esta seguro?" %></td>
+  </tr>
+<% end %>
+</table>
+</div>

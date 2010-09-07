@@ -1,0 +1,22 @@
+<h1>Listing existencias</h1>
+
+<table>
+  <tr>
+    <th>Activo</th>
+    <th>Factura</th>
+    <th>Cantidad</th>
+    <th>Saldo</th>
+    <th>Serial</th>
+  </tr>
+
+<% @existencias.each do |existencia| %>
+  <tr>
+    <td><%=h existencia.activo.descripcion %></td>
+    <td><%=h existencia.factura_id %></td>
+    <td><%=h existencia.cantidad %></td>
+    <td><%=h existencia.saldo %></td>
+    <td><%=h existencia.serial %></td>
+    <td><%= link_to 'Destroy', existencia, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

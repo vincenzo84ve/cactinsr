@@ -1,0 +1,20 @@
+<h1>Listing cgenerals</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+  </tr>
+
+<% @cgenerals.each do |cgeneral| %>
+  <tr>
+    <td><%=h cgeneral.nombre %></td>
+    <td><%= link_to 'Show', cgeneral %></td>
+    <td><%= link_to 'Edit', edit_cgeneral_path(cgeneral) %></td>
+    <td><%= link_to 'Destroy', cgeneral, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cgeneral', new_cgeneral_path %>

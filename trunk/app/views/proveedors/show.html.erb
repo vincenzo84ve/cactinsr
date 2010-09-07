@@ -1,0 +1,41 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @proveedor.nombre %>
+</p>
+
+<p>
+  <b>Rif:</b>
+  <%=h @proveedor.rif %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%=h @proveedor.direccion %>
+</p>
+
+<p>
+  <b>Contacto:</b>
+  <%=h @proveedor.contacto %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%=h @proveedor.telefono %>
+</p>
+
+
+<%= link_to 'Edit', edit_proveedor_path(@proveedor) %> |
+<%= link_to 'Back', proveedors_path %>
+
+<p>
+	<b>Facturas:</b>
+</p>
+	<table>
+		<tr><td>Número</td><td>Fecha</td></tr>
+		<% @facturas.each do |fact| %>
+		<tr>
+			<td><%= fact.id %></td>
+			<td><%= fact.fecha %></td>
+		</tr>
+		<% end %>
+	</table>

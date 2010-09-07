@@ -1,0 +1,16 @@
+<h1>Editing ubicacione</h1>
+
+<% form_for(@ubicacione) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ubicacione %> |
+<%= link_to 'Back', ubicaciones_path %>

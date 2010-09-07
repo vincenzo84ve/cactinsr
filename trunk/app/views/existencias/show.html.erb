@@ -1,0 +1,33 @@
+<p>
+  <b>Activo:</b>
+  <%=h @existencia.activo_id %>
+</p>
+
+<p>
+  <b>Factura:</b>
+  <%=h @existencia.factura_id %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%=h @existencia.cantidad %>
+</p>
+
+<p>
+  <b>Saldo:</b>
+  <%=h @existencia.saldo %>
+</p>
+
+<p>
+  <b>Es asingado:</b>
+  <%=h @existencia.es_asingado %>
+</p>
+
+<p>
+  <b>Serial:</b>
+  <%=h @existencia.serial %>
+</p>
+
+
+<%= link_to 'Edit', edit_existencia_path(@existencia) %> |
+<%= link_to 'Back', existencias_path %>

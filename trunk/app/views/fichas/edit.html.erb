@@ -1,0 +1,32 @@
+<h1>Editing ficha</h1>
+
+<% form_for(@ficha) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </p>
+  <p>
+    <%= f.label :componente %><br />
+    <%= f.text_field :componente %>
+  </p>
+  <p>
+    <%= f.label :medida %><br />
+    <%= f.text_field :medida %>
+  </p>
+  <p>
+    <%= f.label :umedida_id %><br />
+    <%= collection_select (:fichas, :umedida_id, @umedidas, :id, :descripcion) %>
+  </p>
+  <p>
+    <%= f.label :activo_id %><br />
+    <%= f.text_field :activo_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ficha %> |
+<%= link_to 'Back', fichas_path %>

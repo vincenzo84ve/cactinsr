@@ -1,0 +1,36 @@
+<h1>Editing existencia</h1>
+
+<% form_for(@existencia) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :activo_id %><br />
+    <%= f.text_field :activo_id %>
+  </p>
+  <p>
+    <%= f.label :factura_id %><br />
+    <%= f.text_field :factura_id %>
+  </p>
+  <p>
+    <%= f.label :cantidad %><br />
+    <%= f.text_field :cantidad %>
+  </p>
+  <p>
+    <%= f.label :saldo %><br />
+    <%= f.text_field :saldo %>
+  </p>
+  <p>
+    <%= f.label :es_asingado %><br />
+    <%= f.check_box :es_asingado %>
+  </p>
+  <p>
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @existencia %> |
+<%= link_to 'Back', existencias_path %>
