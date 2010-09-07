@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2010-08-18 21:13:29
+  proveedor_id: 1
+
+two:
+  fecha: 2010-08-18 21:13:29
+  proveedor_id: 1

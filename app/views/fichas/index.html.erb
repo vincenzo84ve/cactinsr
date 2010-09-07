@@ -1,0 +1,28 @@
+<h1>Listing fichas</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Componente</th>
+    <th>Medida</th>
+    <th>Umedida</th>
+    <th>Activo</th>
+  </tr>
+
+<% @fichas.each do |ficha| %>
+  <tr>
+    <td><%=h ficha.fecha %></td>
+    <td><%=h ficha.componente %></td>
+    <td><%=h ficha.medida %></td>
+    <td><%=h ficha.umedida.descripcion %></td>
+    <td><%=h ficha.activo.descripcion %></td>
+    <td><%= link_to 'Show', ficha %></td>
+    <td><%= link_to 'Edit', edit_ficha_path(ficha) %></td>
+    <td><%= link_to 'Destroy', ficha, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ficha', new_ficha_path %>

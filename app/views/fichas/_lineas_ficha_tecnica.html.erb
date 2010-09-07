@@ -1,0 +1,21 @@
+<h1>Listing fichas</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Componente</th>
+    <th>Medida</th>
+    <th>Umedida</th>
+  </tr>
+
+<% @fichas.each do |ficha| %>
+  <tr>
+    <td><%=h ficha.fecha %></td>
+    <td><%=h ficha.componente %></td>
+    <td><%=h ficha.medida %></td>
+    <td><%=h ficha.umedida.descripcion %></td>
+    <td><%=h link_to_remote 'Borrar', :update => 'lineas_ficha_tecnica', 
+										:url => ficha_url(:id => ficha.id), :method => :delete, :confirm => "¿Esta seguro?" %></td>
+  </tr>
+<% end %>
+</table>

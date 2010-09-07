@@ -1,0 +1,24 @@
+<h1>Listing facturas</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Proveedor</th>
+	<th>Factura</th>
+  </tr>
+
+<% @facturas.each do |factura| %>
+  <tr>
+    <td><%=h factura.fecha %></td>
+    <td><%=h factura.proveedor.nombre %></td>
+	<td><%=h factura.factura %></td>
+    <td><%= link_to 'Ver', factura %></td>
+    <td><%= link_to 'Anular', factura, :confirm => '¿Esta seguro?', :method => :anular %></td>
+    <td><%= link_to 'Editar', edit_factura_path(factura) if factura.estado == 'en proceso' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New factura', new_factura_path %>

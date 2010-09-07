@@ -1,0 +1,49 @@
+<p>
+  <b>Descripcion:</b>
+  <%=h @activo.descripcion %>
+</p>
+
+<p>
+  <b>Marca:</b>
+  <%=h @activo.marca.descripcion %>
+</p>
+
+<p>
+  <b>Modelo:</b>
+  <%=h @activo.modelo %>
+</p>
+
+<p>
+  <b>Es equipo:</b>
+  <% if @activo.es_equipo == true %>
+  	<%=h image_tag ("activos/bulb_green.png") %>
+  <% else %>
+  	<%=h image_tag ("activos/bulb.png") %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_activo_path(@activo) %> |
+<%= link_to 'Back', activos_path %>
+
+
+=============================================================================================================================================
+<br /><a href="#" onclick="Element.toggle('ficha')">Ficha</a>
+<div id="ficha" style="display:none;">
+<h1>Ficha Téncnica</h1>
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Componente</th>
+    <th>Medida</th>
+    <th>Umedida</th>
+  </tr>
+
+<% @fichas.each do |ficha| %>
+  <tr>
+    <td><%=h ficha.fecha %></td>
+    <td><%=h ficha.componente %></td>
+    <td><%=h ficha.medida %></td>
+    <td><%=h ficha.umedida.descripcion %></td>
+  </tr>
+<% end %>
+</div>

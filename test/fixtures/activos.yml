@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  descripcion: MyString
+  marca_id: 1
+  modelo: MyString
+  es_equipo: false
+  es_asignado: false
+
+two:
+  descripcion: MyString
+  marca_id: 1
+  modelo: MyString
+  es_equipo: false
+  es_asignado: false

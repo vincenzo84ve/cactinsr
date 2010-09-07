@@ -1,0 +1,22 @@
+<h1>Listing careas</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Coordinación General</th>
+  </tr>
+
+<% @careas.each do |carea| %>
+  <tr>
+    <td><%=h carea.nombre %></td>
+    <td><%=h carea.cgeneral.nombre %></td>
+    <td><%= link_to 'Show', carea %></td>
+    <td><%= link_to 'Edit', edit_carea_path(carea) %></td>
+    <td><%= link_to 'Destroy', carea, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New carea', new_carea_path %>

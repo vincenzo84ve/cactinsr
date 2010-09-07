@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2010-08-21
+  componente: MyString
+  medida: 1
+  umedida_id: 1
+  activo_id: 1
+
+two:
+  fecha: 2010-08-21
+  componente: MyString
+  medida: 1
+  umedida_id: 1
+  activo_id: 1

@@ -1,0 +1,13 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @carea.nombre %>
+</p>
+
+<p>
+  <b>Coordinación General:</b>
+  <%=h @carea.cgeneral.nombre %>
+</p>
+
+
+<%= link_to 'Edit', edit_carea_path(@carea) %> |
+<%= link_to 'Back', careas_path %>

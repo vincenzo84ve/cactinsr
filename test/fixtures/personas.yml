@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cedula: MyString
+  nombre: MyString
+  apellido: MyString
+  cargo: MyString
+  carea_id: 1
+  ubicacione_id: 1
+
+two:
+  cedula: MyString
+  nombre: MyString
+  apellido: MyString
+  cargo: MyString
+  carea_id: 1
+  ubicacione_id: 1

@@ -1,0 +1,20 @@
+<h1>Listing umedidas</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+  </tr>
+
+<% @umedidas.each do |umedida| %>
+  <tr>
+    <td><%=h umedida.descripcion %></td>
+    <td><%= link_to 'Show', umedida %></td>
+    <td><%= link_to 'Edit', edit_umedida_path(umedida) %></td>
+    <td><%= link_to 'Destroy', umedida, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New umedida', new_umedida_path %>
