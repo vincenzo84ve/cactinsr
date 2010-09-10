@@ -4,17 +4,19 @@
   <tr>
     <th>Fecha</th>
     <th>Proveedor</th>
-	<th>Factura</th>
+    <th>Factura</th>
+    <th>Estado</th>
   </tr>
 
 <% @facturas.each do |factura| %>
   <tr>
     <td><%=h factura.fecha %></td>
     <td><%=h factura.proveedor.nombre %></td>
-	<td><%=h factura.factura %></td>
+    <td><%=h factura.factura %></td>
+    <td><%=h factura.estado %></td>
     <td><%= link_to 'Ver', factura %></td>
-    <td><%= link_to 'Anular', factura, :confirm => '¿Esta seguro?', :method => :anular %></td>
-    <td><%= link_to 'Editar', edit_factura_path(factura) if factura.estado == 'en proceso' %></td>
+    <td><%= link_to('Anular', "facturas/anular/#{factura.id}", :confirm => '¿Esta seguro?') if factura.estado == "procesada" %></td>
+    <td><%= link_to("Editar", :controller => "existencias", :action => "new", :id => factura.id) if factura.estado == "en proceso" %></td>
   </tr>
 <% end %>
 </table>

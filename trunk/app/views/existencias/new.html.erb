@@ -53,9 +53,7 @@
   </p>
 <% end %>
 <%= button_to 'Procesar', :action => 'procesar', :id => @factura.id %>
-<%= link_to 'Back', existencias_path %>
 
 <div id='lineas_existencias'>
   <%= render(:partial => "linea_existencia")%>
 </div>
-<%= link_to 'Back', existencias_path %>
