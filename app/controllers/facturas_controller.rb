@@ -14,6 +14,7 @@ class FacturasController < ApplicationController
   # GET /facturas/1.xml
   def show
     @factura = Factura.find(params[:id])
+    @existencias = Existencia.find(:all, :conditions => ["factura_id = ?", @factura.id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -75,6 +76,10 @@ class FacturasController < ApplicationController
   end
 
   def anular
-    
+    @factura = Factura.find(params[:id])
+    if @factura.update_attribute("estado", "anulado")
+      Existencia.update_all("esta_activo = false", "factura_id = #{params[:id]}")
+      redirect_to(@factura, :notice => 'Factura anulada con éxito.')
+    end
   end
 end

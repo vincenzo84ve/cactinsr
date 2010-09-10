@@ -16,7 +16,7 @@
     <td><%=h existencia.cantidad %></td>
     <td><%=h existencia.saldo %></td>
     <td><%=h existencia.serial %></td>
-    <td><%= link_to 'Destroy', existencia, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to('Destroy', existencia, :confirm => 'Are you sure?', :method => :delete) if current_page?(:action => 'new') %></td>
   </tr>
 <% end %>
 </table>
