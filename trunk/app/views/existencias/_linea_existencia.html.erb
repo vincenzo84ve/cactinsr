@@ -7,6 +7,9 @@
     <th>Cantidad</th>
     <th>Saldo</th>
     <th>Serial</th>
+    <% if current_page?(:action => 'show') %>
+      <th>Activo</th>
+    <% end %>
   </tr>
 
 <% @existencias.each do |existencia| %>
@@ -16,6 +19,9 @@
     <td><%=h existencia.cantidad %></td>
     <td><%=h existencia.saldo %></td>
     <td><%=h existencia.serial %></td>
+    <% if current_page?(:action => 'show') %>
+      <td><%=h existencia.esta_activo %></td>
+    <% end %>
     <td><%= link_to('Destroy', existencia, :confirm => 'Are you sure?', :method => :delete) if current_page?(:action => 'new') %></td>
   </tr>
 <% end %>

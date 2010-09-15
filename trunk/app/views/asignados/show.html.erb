@@ -1,0 +1,23 @@
+<p>
+  <b>Fecha:</b>
+  <%=h @asignado.fecha %>
+</p>
+
+<p>
+  <b>Persona:</b>
+  <%=h @asignado.persona_id %>
+</p>
+
+<p>
+  <b>Existencia:</b>
+  <%=h @asignado.existencia_id %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%=h @asignado.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_asignado_path(@asignado) %> |
+<%= link_to 'Back', asignados_path %>

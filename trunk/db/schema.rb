@@ -9,13 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100905155605) do
+ActiveRecord::Schema.define(:version => 20100915003407) do
 
   create_table "activos", :force => true do |t|
     t.string   "descripcion"
     t.integer  "marca_id"
     t.string   "modelo"
     t.boolean  "es_equipo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "asignados", :force => true do |t|
+    t.date     "fecha"
+    t.integer  "persona_id"
+    t.integer  "existencia_id"
+    t.boolean  "esta_activo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20100905155605) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "serial"
-    t.boolean  "es_asignado"
-    t.boolean  "esta_activo"
+    t.boolean  "es_asignado", :default => false
+    t.boolean  "esta_activo", :default => false
   end
 
   create_table "facturas", :force => true do |t|
@@ -51,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100905155605) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "factura"
-    t.string   "estado"
+    t.string   "estado",       :default => "en proceso"
   end
 
   create_table "fichas", :force => true do |t|

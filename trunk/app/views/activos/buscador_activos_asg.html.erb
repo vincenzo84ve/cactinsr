@@ -1,0 +1,10 @@
+<% remote_form_for @activos, :url => {:action => :buscador }, :update => 'lineas_busqueda' do |f| %>
+<p>
+  <%= f.text_field :descripcion  %>
+  <%= f.submit 'Buscar' %>
+</p>
+<% end %>
+
+<div id="lineas_busqueda">
+  <%= render(:partial => "lineas_buscador_asg") %>
+</div>

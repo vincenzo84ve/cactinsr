@@ -18,6 +18,17 @@
   <%=h @factura.factura %>
 </p>
 
+<p>
+  <b>Estado:</b>
+  <% if (@factura.estado == 'anulado') %>
+    <font color="red">Anulada</font>
+  <%  elsif (@factura.estado == 'procesada') %>
+    <font color="green">Procesada</font>
+  <% else %>
+    <font color="blue">En proceso</font>
+  <%  end %>
+</p>
+
 <%= link_to 'Volver', facturas_path %>
 
 <div id='lineas_existencias'>
