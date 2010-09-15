@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2010-09-14
+  persona_id: 1
+  existencia_id: 1
+  esta_activo: false
+
+two:
+  fecha: 2010-09-14
+  persona_id: 1
+  existencia_id: 1
+  esta_activo: false

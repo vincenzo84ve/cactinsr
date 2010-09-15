@@ -101,6 +101,11 @@ class ActivosController < ApplicationController
     @activos = Activo.new
   end
 
+  def buscador_activos_asg
+    @resultados = Activo.find(:all)
+    @activos = Activo.new
+  end
+
   def buscador
     @resultados = Activo.find(:all, :conditions => ["descripcion = ?", params[:activo][:descripcion]])
     render(:partial => "lineas_buscador")
