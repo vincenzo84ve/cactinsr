@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :despachos
+
   map.resources :asignados
 
   map.resources :existencias

@@ -35673,3 +35673,437 @@ ActionController::RoutingError (No route matches "/javascripts/defaults.js" with
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing FacturasController#index (for 127.0.0.1 at 2010-09-27 21:58:54) [GET]
+  [4;35;1mFactura Load (441.2ms)[0m   [0mSELECT * FROM "facturas" [0m
+Rendering template within layouts/standard
+Rendering facturas/index
+  [4;36;1mProveedor Load (81.9ms)[0m   [0;1mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "proveedors" WHERE ("proveedors"."id" = 1) [0m
+Completed in 1521ms (View: 905, DB: 524) | 200 OK [http://localhost/facturas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-27 21:58:57) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-27 21:58:57) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "schema_migrations" already exists
+: CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (64.1ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (71.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProveedors (20100819010117)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (194.3ms)[0m   [0mCREATE TABLE "proveedors" ("id" serial primary key, "nombre" character varying(255), "rif" character varying(255), "direccion" character varying(255), "contacto" character varying(255), "telefono" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819010117')[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFacturas (20100819014329)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (74.2ms)[0m   [0mCREATE TABLE "facturas" ("id" serial primary key, "fecha" timestamp, "proveedor_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819014329')[0m
+  [4;35;1mSQL (16.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateExistencias (20100819021548)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (59.5ms)[0m   [0mCREATE TABLE "existencias" ("id" serial primary key, "factura_id" integer, "activo_id" integer, "lote" integer, "cantidad" integer, "saldo" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819021548')[0m
+  [4;35;1mSQL (14.9ms)[0m   [0mCOMMIT[0m
+Migrating to CreateActivos (20100819023501)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (140.7ms)[0m   [0mCREATE TABLE "activos" ("id" serial primary key, "descripcion" character varying(255), "marca_id" integer, "modelo" character varying(255), "es_equipo" boolean, "es_asignado" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819023501')[0m
+  [4;35;1mSQL (13.9ms)[0m   [0mCOMMIT[0m
+Migrating to CreateMarcas (20100819031343)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (61.3ms)[0m   [0mCREATE TABLE "marcas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819031343')[0m
+  [4;35;1mSQL (19.2ms)[0m   [0mCOMMIT[0m
+Migrating to RemoveColumnsActivos (20100820024506)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mALTER TABLE "activos" DROP "es_asignado"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "existencias" DROP "lote"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "serial" character varying(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820024506')[0m
+  [4;35;1mSQL (25.1ms)[0m   [0mCOMMIT[0m
+Migrating to ModExistencia (20100820025534)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "es_asignado" boolean[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820025534')[0m
+  [4;35;1mSQL (13.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUbicaciones (20100820034215)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (62.3ms)[0m   [0mCREATE TABLE "ubicaciones" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820034215')[0m
+  [4;35;1mSQL (32.1ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCgenerals (20100820035948)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (62.7ms)[0m   [0mCREATE TABLE "cgenerals" ("id" serial primary key, "nombre" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820035948')[0m
+  [4;35;1mSQL (14.9ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCareas (20100820040332)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (62.3ms)[0m   [0mCREATE TABLE "careas" ("id" serial primary key, "nombre" character varying(255), "cgeneral_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820040332')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePersonas (20100820045602)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (166.2ms)[0m   [0mCREATE TABLE "personas" ("id" serial primary key, "cedula" character varying(255), "nombre" character varying(255), "apellido" character varying(255), "cargo" character varying(255), "carea_id" integer, "ubicacione_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820045602')[0m
+  [4;35;1mSQL (28.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUmedidas (20100821152848)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (63.7ms)[0m   [0mCREATE TABLE "umedidas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821152848')[0m
+  [4;35;1mSQL (21.5ms)[0m   [0mCOMMIT[0m
+Migrating to AddColumnFichas (20100821174136)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "fichas" does not exist
+: ALTER TABLE "fichas" ADD COLUMN "activo_id" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (80.4ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (70.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProveedors (20100819010117)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (122.4ms)[0m   [0mCREATE TABLE "proveedors" ("id" serial primary key, "nombre" character varying(255), "rif" character varying(255), "direccion" character varying(255), "contacto" character varying(255), "telefono" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819010117')[0m
+  [4;35;1mSQL (14.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFacturas (20100819014329)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (67.4ms)[0m   [0mCREATE TABLE "facturas" ("id" serial primary key, "fecha" timestamp, "proveedor_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819014329')[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mCOMMIT[0m
+Migrating to CreateExistencias (20100819021548)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (47.8ms)[0m   [0mCREATE TABLE "existencias" ("id" serial primary key, "factura_id" integer, "activo_id" integer, "lote" integer, "cantidad" integer, "saldo" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819021548')[0m
+  [4;35;1mSQL (22.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateActivos (20100819023501)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (134.5ms)[0m   [0mCREATE TABLE "activos" ("id" serial primary key, "descripcion" character varying(255), "marca_id" integer, "modelo" character varying(255), "es_equipo" boolean, "es_asignado" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819023501')[0m
+  [4;35;1mSQL (20.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateMarcas (20100819031343)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (58.2ms)[0m   [0mCREATE TABLE "marcas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819031343')[0m
+  [4;35;1mSQL (21.3ms)[0m   [0mCOMMIT[0m
+Migrating to RemoveColumnsActivos (20100820024506)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mALTER TABLE "activos" DROP "es_asignado"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mALTER TABLE "existencias" DROP "lote"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "serial" character varying(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820024506')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+Migrating to ModExistencia (20100820025534)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "es_asignado" boolean[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820025534')[0m
+  [4;35;1mSQL (13.6ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUbicaciones (20100820034215)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (63.3ms)[0m   [0mCREATE TABLE "ubicaciones" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820034215')[0m
+  [4;35;1mSQL (22.3ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCgenerals (20100820035948)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (58.9ms)[0m   [0mCREATE TABLE "cgenerals" ("id" serial primary key, "nombre" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820035948')[0m
+  [4;35;1mSQL (19.9ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCareas (20100820040332)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (48.4ms)[0m   [0mCREATE TABLE "careas" ("id" serial primary key, "nombre" character varying(255), "cgeneral_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820040332')[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePersonas (20100820045602)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (92.2ms)[0m   [0mCREATE TABLE "personas" ("id" serial primary key, "cedula" character varying(255), "nombre" character varying(255), "apellido" character varying(255), "cargo" character varying(255), "carea_id" integer, "ubicacione_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820045602')[0m
+  [4;35;1mSQL (18.1ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUmedidas (20100821152848)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (49.8ms)[0m   [0mCREATE TABLE "umedidas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821152848')[0m
+  [4;35;1mSQL (57.0ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFichas (20100821181132)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (49.4ms)[0m   [0mCREATE TABLE "fichas" ("id" serial primary key, "fecha" date, "componente" character varying(255), "medida" integer, "umedida_id" integer, "activo_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821181132')[0m
+  [4;35;1mSQL (15.3ms)[0m   [0mCOMMIT[0m
+Migrating to AddColumnFichas (20100821184136)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: column "activo_id" of relation "fichas" already exists
+: ALTER TABLE "fichas" ADD COLUMN "activo_id" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (59.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProveedors (20100819010117)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (120.1ms)[0m   [0mCREATE TABLE "proveedors" ("id" serial primary key, "nombre" character varying(255), "rif" character varying(255), "direccion" character varying(255), "contacto" character varying(255), "telefono" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819010117')[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFacturas (20100819014329)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (53.7ms)[0m   [0mCREATE TABLE "facturas" ("id" serial primary key, "fecha" timestamp, "proveedor_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819014329')[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateExistencias (20100819021548)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (53.4ms)[0m   [0mCREATE TABLE "existencias" ("id" serial primary key, "factura_id" integer, "activo_id" integer, "lote" integer, "cantidad" integer, "saldo" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819021548')[0m
+  [4;35;1mSQL (33.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateActivos (20100819023501)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE "activos" ("id" serial primary key, "descripcion" character varying(255), "marca_id" integer, "modelo" character varying(255), "es_equipo" boolean, "es_asignado" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819023501')[0m
+  [4;35;1mSQL (21.3ms)[0m   [0mCOMMIT[0m
+Migrating to CreateMarcas (20100819031343)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (54.7ms)[0m   [0mCREATE TABLE "marcas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819031343')[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCOMMIT[0m
+Migrating to RemoveColumnsActivos (20100820024506)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mALTER TABLE "activos" DROP "es_asignado"[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "existencias" DROP "lote"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "serial" character varying(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820024506')[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mCOMMIT[0m
+Migrating to ModExistencia (20100820025534)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "es_asignado" boolean[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820025534')[0m
+  [4;35;1mSQL (9.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUbicaciones (20100820034215)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (56.0ms)[0m   [0mCREATE TABLE "ubicaciones" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820034215')[0m
+  [4;35;1mSQL (13.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCgenerals (20100820035948)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (56.9ms)[0m   [0mCREATE TABLE "cgenerals" ("id" serial primary key, "nombre" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820035948')[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCareas (20100820040332)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (55.3ms)[0m   [0mCREATE TABLE "careas" ("id" serial primary key, "nombre" character varying(255), "cgeneral_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820040332')[0m
+  [4;35;1mSQL (14.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePersonas (20100820045602)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (111.9ms)[0m   [0mCREATE TABLE "personas" ("id" serial primary key, "cedula" character varying(255), "nombre" character varying(255), "apellido" character varying(255), "cargo" character varying(255), "carea_id" integer, "ubicacione_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820045602')[0m
+  [4;35;1mSQL (22.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUmedidas (20100821152848)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (50.3ms)[0m   [0mCREATE TABLE "umedidas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821152848')[0m
+  [4;35;1mSQL (21.2ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFichas (20100821181132)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (91.5ms)[0m   [0mCREATE TABLE "fichas" ("id" serial primary key, "fecha" date, "componente" character varying(255), "medida" integer, "umedida_id" integer, "activo_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821181132')[0m
+  [4;35;1mSQL (22.5ms)[0m   [0mCOMMIT[0m
+Migrating to AddColumnFichas (20100821184136)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (85.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (71.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProveedors (20100819010117)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (128.1ms)[0m   [0mCREATE TABLE "proveedors" ("id" serial primary key, "nombre" character varying(255), "rif" character varying(255), "direccion" character varying(255), "contacto" character varying(255), "telefono" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819010117')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFacturas (20100819014329)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (73.7ms)[0m   [0mCREATE TABLE "facturas" ("id" serial primary key, "fecha" timestamp, "proveedor_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819014329')[0m
+  [4;35;1mSQL (12.1ms)[0m   [0mCOMMIT[0m
+Migrating to CreateExistencias (20100819021548)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (71.2ms)[0m   [0mCREATE TABLE "existencias" ("id" serial primary key, "factura_id" integer, "activo_id" integer, "lote" integer, "cantidad" integer, "saldo" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819021548')[0m
+  [4;35;1mSQL (30.5ms)[0m   [0mCOMMIT[0m
+Migrating to CreateActivos (20100819023501)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (130.0ms)[0m   [0mCREATE TABLE "activos" ("id" serial primary key, "descripcion" character varying(255), "marca_id" integer, "modelo" character varying(255), "es_equipo" boolean, "es_asignado" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819023501')[0m
+  [4;35;1mSQL (16.7ms)[0m   [0mCOMMIT[0m
+Migrating to CreateMarcas (20100819031343)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (64.5ms)[0m   [0mCREATE TABLE "marcas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100819031343')[0m
+  [4;35;1mSQL (19.1ms)[0m   [0mCOMMIT[0m
+Migrating to RemoveColumnsActivos (20100820024506)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mALTER TABLE "activos" DROP "es_asignado"[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "existencias" DROP "lote"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "serial" character varying(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820024506')[0m
+  [4;35;1mSQL (13.5ms)[0m   [0mCOMMIT[0m
+Migrating to ModExistencia (20100820025534)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mALTER TABLE "existencias" ADD COLUMN "es_asignado" boolean[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820025534')[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUbicaciones (20100820034215)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (55.5ms)[0m   [0mCREATE TABLE "ubicaciones" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820034215')[0m
+  [4;35;1mSQL (13.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCgenerals (20100820035948)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (55.2ms)[0m   [0mCREATE TABLE "cgenerals" ("id" serial primary key, "nombre" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820035948')[0m
+  [4;35;1mSQL (13.8ms)[0m   [0mCOMMIT[0m
+Migrating to CreateCareas (20100820040332)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (66.9ms)[0m   [0mCREATE TABLE "careas" ("id" serial primary key, "nombre" character varying(255), "cgeneral_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820040332')[0m
+  [4;35;1mSQL (19.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreatePersonas (20100820045602)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (122.8ms)[0m   [0mCREATE TABLE "personas" ("id" serial primary key, "cedula" character varying(255), "nombre" character varying(255), "apellido" character varying(255), "cargo" character varying(255), "carea_id" integer, "ubicacione_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100820045602')[0m
+  [4;35;1mSQL (12.6ms)[0m   [0mCOMMIT[0m
+Migrating to CreateUmedidas (20100821152848)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (68.6ms)[0m   [0mCREATE TABLE "umedidas" ("id" serial primary key, "descripcion" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821152848')[0m
+  [4;35;1mSQL (17.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateFichas (20100821181132)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (67.4ms)[0m   [0mCREATE TABLE "fichas" ("id" serial primary key, "fecha" date, "componente" character varying(255), "medida" integer, "umedida_id" integer, "activo_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100821181132')[0m
+  [4;35;1mSQL (32.4ms)[0m   [0mCOMMIT[0m
+Migrating to AddColumnFactura (20100825011749)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mALTER TABLE "facturas" ADD COLUMN "factura" integer[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100825011749')[0m
+  [4;35;1mSQL (16.5ms)[0m   [0mCOMMIT[0m
+Migrating to ProcesoFactura (20100905155605)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "facturas" ADD COLUMN "estado" character varying(255)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "existencias" ADD COLUMN "esta_activo" boolean[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100905155605')[0m
+  [4;36;1mSQL (12.7ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateAsignados (20100915003407)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (69.6ms)[0m   [0;1mCREATE TABLE "asignados" ("id" serial primary key, "fecha" date, "persona_id" integer, "existencia_id" integer, "esta_activo" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100915003407')[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateDespachos (20100928023439)
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (48.3ms)[0m   [0;1mCREATE TABLE "despachos" ("id" serial primary key, "persona_id" integer, "fecha" date, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100928023439')[0m
+  [4;36;1mSQL (21.8ms)[0m   [0;1mCOMMIT[0m
