@@ -1,0 +1,18 @@
+<p>
+  <b>Existencia:</b>
+  <%=h @lineas_asignado.existencia_id %>
+</p>
+
+<p>
+  <b>Asignado:</b>
+  <%=h @lineas_asignado.asignado_id %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%=h @lineas_asignado.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_lineas_asignado_path(@lineas_asignado) %> |
+<%= link_to 'Back', lineas_asignados_path %>

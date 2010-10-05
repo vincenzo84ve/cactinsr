@@ -1,6 +1,6 @@
-<h1>New asignado</h1>
+<h1>Nueva asignación</h1>
 
-<% form_for(@asignado, :html => {"name" => "form_asignado"}) do |f| %>
+<% form_for(@asignado) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -10,16 +10,6 @@
   <p>
     <%= f.label :persona_id %><br />
     <%= collection_select(:asignado, :persona_id, @personas, :id, :nombre_apellido) %>
-  </p>
-  <p>
-    <%= f.label :existencia_id %><br />
-    <%= text_field_tag "activo_id", nil, :disabled => "disabled" %><br />
-    <%= text_field_tag "descripcion", nil, :disabled => "disabled" %>
-    <%= f.hidden_field :existencia_id %> <%= link_to "Producto", options = {:action  => "buscador_activos_asg", :controller => "activos", :id => "all"} , html_options = {"title" => "Ejemplo", "onclick" => "this.blur(); Modalbox.show(this.href, {title: 'Welcome to ModalBox demo', width: 600}); return false;"} %>  <br />
-  </p>
-  <p>
-    <%= f.label :esta_activo %><br />
-    <%= f.check_box :esta_activo %>
   </p>
   <p>
     <%= f.submit 'Create' %>

@@ -1,0 +1,24 @@
+<h1>Listing lineas_asignados</h1>
+
+<table>
+  <tr>
+    <th>Existencia</th>
+    <th>Asignado</th>
+    <th>Esta activo</th>
+  </tr>
+
+<% @lineas_asignados.each do |lineas_asignado| %>
+  <tr>
+    <td><%=h lineas_asignado.existencia_id %></td>
+    <td><%=h lineas_asignado.asignado_id %></td>
+    <td><%=h lineas_asignado.esta_activo %></td>
+    <td><%= link_to 'Show', lineas_asignado %></td>
+    <td><%= link_to 'Edit', edit_lineas_asignado_path(lineas_asignado) %></td>
+    <td><%= link_to 'Destroy', lineas_asignado, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New lineas_asignado', new_lineas_asignado_path %>

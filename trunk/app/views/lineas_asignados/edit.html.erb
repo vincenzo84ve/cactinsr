@@ -1,0 +1,24 @@
+<h1>Editing lineas_asignado</h1>
+
+<% form_for(@lineas_asignado) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :existencia_id %><br />
+    <%= f.text_field :existencia_id %>
+  </p>
+  <p>
+    <%= f.label :asignado_id %><br />
+    <%= f.text_field :asignado_id %>
+  </p>
+  <p>
+    <%= f.label :esta_activo %><br />
+    <%= f.check_box :esta_activo %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @lineas_asignado %> |
+<%= link_to 'Back', lineas_asignados_path %>
