@@ -1,0 +1,66 @@
+<p>
+  <b>Fecha:</b>
+  <%=h @asignado.fecha %>
+</p>
+
+<p>
+  <b>Persona:</b>
+  <%=h @asignado.persona_id %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%=h @asignado.persona.nombre_apellido %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%=h @asignado.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_asignado_path(@asignado) %> |
+<%= link_to 'Back', asignados_path %>
+
+
+<h1>New lineas_asignado</h1>
+
+<% form_remote_for @linea_asignado, :url => {:controller => :lineas_asignados, :action => :create },
+							:complete => 'document.forms[0].reset();',
+							:update => 'lineas_asginados',
+                                                        :html => {"name" => "form_asignado"} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :existencia_id %><br />
+    <%= f.text_field :existencia_id %>
+  </p>
+  <p>
+    <%= f.label :asignado_id %><br />
+    <%= f.text_field :asignado_id %>
+  </p>
+  <p>
+    <%= f.label :esta_activo %><br />
+    <%= f.check_box :esta_activo %>
+  </p>
+
+  <p>
+    <%= label_tag "activo", "Activos" %><br />
+    <%= text_field_tag "activo_id", nil, :disabled => "disabled" %><br />
+    <%= text_field_tag "descripcion", nil, :disabled => "disabled" %>
+    <%= f.hidden_field :existencia_id %> <%= link_to "Producto", options = {:action  => "buscador_activos_asg", :controller => "activos", :id => "all"} , html_options = {"title" => "Ejemplo", "onclick" => "this.blur(); Modalbox.show(this.href, {title: 'Welcome to ModalBox demo', width: 600}); return false;"} %>  <br />
+  </p>
+  <p>
+    <%= f.label :esta_activo %><br />
+    <%= f.check_box :esta_activo %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', lineas_asignados_path %>
+
+<div id='lineas_asignados'>
+  <%= render(:partial => "linea_asignado")%>
+</div>

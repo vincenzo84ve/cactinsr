@@ -1,4 +1,4 @@
 class Asignado < ActiveRecord::Base
-  belongs_to :existencia
+  has_many :lineas_asignados
   belongs_to :persona
 end

@@ -42,16 +42,8 @@ class AsignadosController < ApplicationController
   # POST /asignados.xml
   def create
     @asignado = Asignado.new(params[:asignado])
-
-    respond_to do |format|
-      if @asignado.save
-        format.html { redirect_to(@asignado, :notice => 'Asignado was successfully created.') }
-        format.xml  { render :xml => @asignado, :status => :created, :location => @asignado }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @asignado.errors, :status => :unprocessable_entity }
-      end
-    end
+    @asignado.save
+    redirect_to(:controller => "lineas_asignados", :action => "new", :id => @asignado)
   end
 
   # PUT /asignados/1
