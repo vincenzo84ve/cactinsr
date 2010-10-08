@@ -25,9 +25,9 @@ class LineasAsignadosController < ApplicationController
   # GET /lineas_asignados/new.xml
   def new
     @linea_asignado = LineasAsignado.new
-    @lineas_asignados = Asignado.find(:all, :conditions => ["id = ?", params[:id]])
     @asignado = Asignado.find(:first, :conditions => ["id = ?", params[:id]])
     @asignados = LineasAsignado.find(:all, :conditions => ["asignado_id = ?", params[:id]])
+    @linea_asignado.asignado_id = @asignado.id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,17 +43,13 @@ class LineasAsignadosController < ApplicationController
   # POST /lineas_asignados
   # POST /lineas_asignados.xml
   def create
-    @lineas_asignado = LineasAsignado.find(:all, :conditions => ["asignado_id = ?", param[:asignado_id]])
+    @lineas_asignado = LineasAsignado.new(params[:lineas_asignado])
+    @lineas_asignado.save
+    @linea_asignado = LineasAsignado.new
+    @linea_asignado.asignado_id = @lineas_asignado.asignado_id
+    @asignados = LineasAsignado.find(:all, :conditions=>["asignado_id = ?", @linea_asignado.asignado_id])
 
-    respond_to do |format|
-      if @lineas_asignado.save
-        format.html { redirect_to(@lineas_asignado, :notice => 'LineasAsignado was successfully created.') }
-        format.xml  { render :xml => @lineas_asignado, :status => :created, :location => @lineas_asignado }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @lineas_asignado.errors, :status => :unprocessable_entity }
-      end
-    end
+    render :partial => "linea_asignado"
   end
 
   # PUT /lineas_asignados/1

@@ -14,6 +14,7 @@ class AsignadosController < ApplicationController
   # GET /asignados/1.xml
   def show
     @asignado = Asignado.find(params[:id])
+    @asignados = LineasAsignado.find(:all, :conditions=>["asignado_id = ?", params[:id]])
 
     respond_to do |format|
       format.html # show.html.erb
