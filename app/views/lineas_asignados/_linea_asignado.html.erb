@@ -3,23 +3,23 @@
 # and open the template in the editor.
 %>
 
-<h1>Listing existencias</h1>
+<h3>Listando Activos Asignados</h3>
 
 <table>
   <tr>
-    <th>Fecha</th>
     <th>Activo</th>
+    <th>Modelo</th>
     <th>Serial</th>
-    <!-- <% if current_page?(:action => 'show') %>
+    <% if current_page?(:action => 'show') %>
       <th>Activo</th>
-    <% end %> -->
+    <% end %>
   </tr>
 
 <% @asignados.each do |linea| %>
   <tr>
-    <td><%=h linea.fecha %></td>
-    <td><%=h linea.activo.descripcion %></td>
-    <td><%=h linea.serial %></td>
+    <td><%=h linea.existencia.activo.descripcion %></td>
+    <td><%=h linea.existencia.activo.modelo %></td>
+    <td><%=h linea.existencia.serial %></td>
     <td><%= link_to('Destroy', linea, :confirm => '¿Esta seguro?', :method => :delete) if current_page?(:action => 'new') %></td>
   </tr>
 <% end %>

@@ -9,11 +9,6 @@
 </p>
 
 <p>
-  <b>Existencia:</b>
-  <%=h @asignado.existencia_id %>
-</p>
-
-<p>
   <b>Esta activo:</b>
   <%=h @asignado.esta_activo %>
 </p>
@@ -21,3 +16,7 @@
 
 <%= link_to 'Edit', edit_asignado_path(@asignado) %> |
 <%= link_to 'Back', asignados_path %>
+
+<div id='lineas_asignados'>
+  <%= render(:partial => "lineas_asignados/linea_asignado")%>
+</div>

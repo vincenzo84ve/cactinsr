@@ -29,14 +29,9 @@
     </td>
     <td><a onclick="Modalbox.hide({afterHide: function() {
                                         document.form_asignado.activo_id.value='<%= activo.id %>';
-                                        document.form_asignado.asignado_existencia_id.value='<%= activo.id %>';
+                                        document.form_asignado.lineas_asignado_existencia_id.value='<%= activo.id %>';
                                         document.form_asignado.descripcion.value='<%= activo.descripcion %>';
                                         document.getElementById('attr').style.display = '';
-                                        if (<%= activo.es_equipo %>){
-                                          document.getElementById('lblAttr').innerHTML = 'Serial';
-                                        }else{
-                                          document.getElementById('lblAttr').innerHTML = 'Cantidad';
-                                        }
                                     }}); return false;" title = "Usar & Cerrar" href="#">Usar</a></td>
     <td><%= link_to 'Show', activo %></td>
   </tr>

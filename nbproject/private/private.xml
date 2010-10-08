@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/models/asignado.rb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/asignados/new.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/facturas/new.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/facturas/edit.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/existencias/new.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/controllers/existencias_controller.rb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/lineas_asignados/_linea_asignado.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/controllers/asignados_controller.rb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/controllers/facturas_controller.rb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/controllers/lineas_asignados_controller.rb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/lineas_asignados/new.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/views/asignados/show.html.erb</file>
+        <file>file:/home/vincenzo/Otros/proyectos/cactins/app/models/lineas_asignado.rb</file>
+    </open-files>
 </project-private>

@@ -2,17 +2,17 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Fecha</th>
     <th>Persona</th>
-    <th>Existencia</th>
     <th>Esta activo</th>
   </tr>
 
 <% @asignados.each do |asignado| %>
   <tr>
+    <td><%=h asignado.id %></td>
     <td><%=h asignado.fecha %></td>
     <td><%=h asignado.persona.nombre_apellido %></td>
-    <td><%=h asignado.existencia.activo.descripcion %></td>
     <td><%=h asignado.esta_activo %></td>
     <td><%= link_to 'Show', asignado %></td>
     <td><%= link_to 'Edit', edit_asignado_path(asignado) %></td>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New asignado', new_asignado_path %>
+<%= link_to 'Nueva Asignación', new_asignado_path %>
