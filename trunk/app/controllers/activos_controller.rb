@@ -107,7 +107,8 @@ class ActivosController < ApplicationController
   end
 
   def buscador
-    @resultados = Activo.find(:all, :conditions => ["descripcion = ?", params[:activo][:descripcion]])
+    #@resultados = Activo.find(:all, :conditions => ["descripcion = ?", params[:descripcion]])
+    @resultados = Activo.find_by_sql("SELECT * FROM activos WHERE descripcion ilike '%#{params[:descripcion]}%'")
     render(:partial => "lineas_buscador")
   end
 end

@@ -85,11 +85,9 @@ class ExistenciasController < ApplicationController
   def destroy
     @existencia = Existencia.find(params[:id])
     @existencia.destroy
+    @existencias = Existencia.find(:all, :conditions => ["factura_id = ?", @existencia.factura_id])
 
-    respond_to do |format|
-      format.html { redirect_to(existencias_url) }
-      format.xml  { head :ok }
-    end
+    render :partial => "linea_existencia"
   end
 
   def procesar

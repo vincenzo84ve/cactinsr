@@ -44,6 +44,9 @@ class LineasAsignadosController < ApplicationController
   # POST /lineas_asignados.xml
   def create
     @lineas_asignado = LineasAsignado.new(params[:lineas_asignado])
+    @lineas_asignado.esta_activo = true
+    @lineas_asignado.existencia.es_asignado = true
+    # Actualizar la existencia a  asignado true
     @lineas_asignado.save
     @linea_asignado = LineasAsignado.new
     @linea_asignado.asignado_id = @lineas_asignado.asignado_id
@@ -73,10 +76,8 @@ class LineasAsignadosController < ApplicationController
   def destroy
     @lineas_asignado = LineasAsignado.find(params[:id])
     @lineas_asignado.destroy
+    @asignados = LineasAsignado.find(:all, :conditions => ["asignado_id = ?", @lineas_asignado.asignado_id])
 
-    respond_to do |format|
-      format.html { redirect_to(lineas_asignados_url) }
-      format.xml  { head :ok }
-    end
+    render :partial => "linea_asignado"
   end
 end
