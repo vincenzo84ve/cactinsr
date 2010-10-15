@@ -22,7 +22,7 @@
     <% if current_page?(:action => 'show') %>
       <td><%=h existencia.esta_activo %></td>
     <% end %>
-    <td><%= link_to('Destroy', existencia, :confirm => 'Are you sure?', :method => :delete) if current_page?(:action => 'new') %></td>
+    <td><%=h link_to_remote 'Borrar', :update => 'lineas_existencias', :url => existencia_url(:id => existencia.id), :method => :delete, :confirm => "¿Esta seguro?" %></td>
   </tr>
 <% end %>
 </table>

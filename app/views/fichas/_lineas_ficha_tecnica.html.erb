@@ -14,8 +14,7 @@
     <td><%=h ficha.componente %></td>
     <td><%=h ficha.medida %></td>
     <td><%=h ficha.umedida.descripcion %></td>
-    <td><%=h link_to_remote 'Borrar', :update => 'lineas_ficha_tecnica', 
-										:url => ficha_url(:id => ficha.id), :method => :delete, :confirm => "¿Esta seguro?" %></td>
+    <td><%=h link_to_remote 'Borrar', :update => 'lineas_ficha_tecnica', :url => ficha_url(:id => ficha.id), :method => :delete, :confirm => "¿Esta seguro?" %></td>
   </tr>
 <% end %>
 </table>
