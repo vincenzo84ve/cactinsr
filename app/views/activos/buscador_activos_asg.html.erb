@@ -1,9 +1,5 @@
-<% remote_form_for @activos, :url => {:action => :buscador }, :update => 'lineas_busqueda' do |f| %>
-<p>
-  <%= f.text_field :descripcion  %>
-  <%= f.submit 'Buscar' %>
-</p>
-<% end %>
+<%= text_field_tag :descripcion %>
+<%= observe_field( :descripcion, :frequency=> 0.1, :update=>"lineas_busqueda", :url=>{:action=>:buscador_asg }, :with=>"descripcion" )%>
 
 <div id="lineas_busqueda">
   <%= render(:partial => "lineas_buscador_asg") %>

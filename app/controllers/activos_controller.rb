@@ -102,13 +102,21 @@ class ActivosController < ApplicationController
   end
 
   def buscador_activos_asg
-    @resultados = Activo.find(:all)
+    #@resultados = Activo.find(:all, :conditions => ["es_equipo = ? AND LOWER(descripcion) ilike ?", "t", "%#{params[:descripcion]}%"])
+    @resultados = Activo.find_by_sql("SELECT existencias.id, activos.descripcion AS activo, marcas.descripcion AS marcas, activos.modelo, existencias.serial FROM activos, existencias, marcas WHERE (existencias.es_asignado = 'f' AND existencias.esta_activo = 't' AND existencias.activo_id = activos.id AND activos.es_equipo = 't' AND activos.marca_id = marcas.id) ORDER BY existencias.id ASC")
     @activos = Activo.new
   end
 
   def buscador
     #@resultados = Activo.find(:all, :conditions => ["descripcion = ?", params[:descripcion]])
-    @resultados = Activo.find_by_sql("SELECT * FROM activos WHERE descripcion ilike '%#{params[:descripcion]}%'")
+    #@resultados = Activo.find_by_sql("SELECT * FROM activos WHERE descripcion ilike '%#{params[:descripcion]}%'")
+    @resultados = Activo.find(:all, :conditions => ["LOWER(descripcion) ILIKE ?", "%#{params[:descripcion].downcase}%"])
     render(:partial => "lineas_buscador")
+  end
+
+  def buscador_asg
+    #@resultados = Activo.find(:all, :conditions => ["es_equipo = ? AND LOWER(descripcion) ILIKE ?", "t", "%#{params[:descripcion].downcase}%"])
+    @resultados = Activo.find_by_sql("SELECT existencias.id, activos.descripcion AS activo, marcas.descripcion AS marcas, activos.modelo, existencias.serial FROM activos, existencias, marcas WHERE (existencias.es_asignado = 'f' AND existencias.esta_activo = 't' AND existencias.activo_id = activos.id AND activos.es_equipo = 't' AND activos.marca_id = marcas.id AND LOWER(activos.descripcion) ilike '%#{params[:descripcion].downcase}%') ORDER BY existencias.id ASC")
+    render(:partial => "lineas_buscador_asg")
   end
 end

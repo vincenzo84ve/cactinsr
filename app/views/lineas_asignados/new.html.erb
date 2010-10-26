@@ -13,6 +13,13 @@
   <%=h @asignado.persona.nombre_apellido %>
 </p>
 
+<p>
+  <b>Coordinación:</b>
+  <%=h @asignado.persona.carea.cgeneral.nombre %><br />
+  <b>Área:</b>
+  <%=h @asignado.persona.carea.nombre %>
+</p>
+
 <%= link_to 'Back', asignados_path %>
 
 
