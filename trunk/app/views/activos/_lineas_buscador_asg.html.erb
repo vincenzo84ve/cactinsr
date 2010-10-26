@@ -12,25 +12,19 @@
     <th>Descripcion</th>
     <th>Marca</th>
     <th>Modelo</th>
-    <th>Es equipo</th>
+    <th>Serial</th>
   </tr>
 
 <% @resultados.each do |activo| %>
   <tr>
-    <td><%=h activo.descripcion %></td>
-    <td><%=h activo.marca.descripcion %></td>
+    <td><%=h activo.activo %></td>
+    <td><%=h activo.marcas %></td>
     <td><%=h activo.modelo %></td>
-    <td>
-    	<center><% if activo.es_equipo == true %>
-			<%=h image_tag ("activos/bulb_green.png") %>
-		<% else %>
-  			<%=h image_tag ("activos/bulb.png") %>
-		<% end %></center>
-    </td>
+    <td><%=h activo.serial %></td>
     <td><a onclick="Modalbox.hide({afterHide: function() {
                                         document.form_asignado.activo_id.value='<%= activo.id %>';
                                         document.form_asignado.lineas_asignado_existencia_id.value='<%= activo.id %>';
-                                        document.form_asignado.descripcion.value='<%= activo.descripcion %>';
+                                        document.form_asignado.descripcion.value='<%= activo.activo %>';
                                         document.getElementById('attr').style.display = '';
                                     }}); return false;" title = "Usar & Cerrar" href="#">Usar</a></td>
     <td><%= link_to 'Show', activo %></td>
