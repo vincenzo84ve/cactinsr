@@ -45,9 +45,10 @@ class LineasAsignadosController < ApplicationController
   def create
     @lineas_asignado = LineasAsignado.new(params[:lineas_asignado])
     @lineas_asignado.esta_activo = true
-    @lineas_asignado.existencia.es_asignado = true
-    # Actualizar la existencia a  asignado true
     @lineas_asignado.save
+    # Actualizar la existencia a  asignado true
+    @existencia = Existencia.find(@lineas_asignado.existencia_id)
+    @existencia.update_attribute(:es_asignado, true)
     @linea_asignado = LineasAsignado.new
     @linea_asignado.asignado_id = @lineas_asignado.asignado_id
     @asignados = LineasAsignado.find(:all, :conditions=>["asignado_id = ?", @linea_asignado.asignado_id])

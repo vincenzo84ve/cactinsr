@@ -1,0 +1,28 @@
+<h1>Editing desasignado</h1>
+
+<% form_for(@desasignado) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </p>
+  <p>
+    <%= f.label :asignado_id %><br />
+    <%= f.text_field :asignado_id %>
+  </p>
+  <p>
+    <%= f.label :motivo_id %><br />
+    <%= f.text_field :motivo_id %>
+  </p>
+  <p>
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @desasignado %> |
+<%= link_to 'Back', desasignados_path %>

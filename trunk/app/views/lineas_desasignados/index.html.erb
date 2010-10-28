@@ -1,0 +1,22 @@
+<h1>Listing lineas_desasignados</h1>
+
+<table>
+  <tr>
+    <th>Desasignado</th>
+    <th>Existencia</th>
+  </tr>
+
+<% @lineas_desasignados.each do |lineas_desasignado| %>
+  <tr>
+    <td><%=h lineas_desasignado.desasignado_id %></td>
+    <td><%=h lineas_desasignado.existencia_id %></td>
+    <td><%= link_to 'Show', lineas_desasignado %></td>
+    <td><%= link_to 'Edit', edit_lineas_desasignado_path(lineas_desasignado) %></td>
+    <td><%= link_to 'Destroy', lineas_desasignado, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New lineas_desasignado', new_lineas_desasignado_path %>

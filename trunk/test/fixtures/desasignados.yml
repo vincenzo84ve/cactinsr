@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2010-10-27
+  asignado_id: 1
+  motivo_id: 1
+  descripcion: MyText
+
+two:
+  fecha: 2010-10-27
+  asignado_id: 1
+  motivo_id: 1
+  descripcion: MyText
