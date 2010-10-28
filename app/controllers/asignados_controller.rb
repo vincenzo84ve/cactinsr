@@ -43,6 +43,7 @@ class AsignadosController < ApplicationController
   # POST /asignados.xml
   def create
     @asignado = Asignado.new(params[:asignado])
+    @asignado.esta_activo = true
     @asignado.save
     redirect_to(:controller => "lineas_asignados", :action => "new", :id => @asignado)
   end

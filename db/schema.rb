@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file,
+# This file is auto-generated from the current state of the database. Instead of editing this file, 
 # please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101004235557) do
+ActiveRecord::Schema.define(:version => 20101028040208) do
 
   create_table "activos", :force => true do |t|
     t.string   "descripcion"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20101004235557) do
 
   create_table "cgenerals", :force => true do |t|
     t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "desasignados", :force => true do |t|
+    t.date     "fecha"
+    t.integer  "asignado_id"
+    t.integer  "motivo_id"
+    t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,7 +96,20 @@ ActiveRecord::Schema.define(:version => 20101004235557) do
     t.datetime "updated_at"
   end
 
+  create_table "lineas_desasignados", :force => true do |t|
+    t.integer  "desasignado_id"
+    t.integer  "existencia_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "marcas", :force => true do |t|
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "motivos", :force => true do |t|
     t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"

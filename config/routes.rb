@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :lineas_desasignados
+
+  map.resources :desasignados
+
+  map.resources :motivos
+
   map.resources :lineas_asignados
 
   map.resources :despachos

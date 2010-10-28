@@ -1,0 +1,23 @@
+<p>
+  <b>Fecha:</b>
+  <%=h @desasignado.fecha %>
+</p>
+
+<p>
+  <b>Asignado:</b>
+  <%=h @desasignado.asignado_id %>
+</p>
+
+<p>
+  <b>Motivo:</b>
+  <%=h @desasignado.motivo_id %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%=h @desasignado.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_desasignado_path(@desasignado) %> |
+<%= link_to 'Back', desasignados_path %>

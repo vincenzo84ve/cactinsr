@@ -1,0 +1,26 @@
+<h1>Listing desasignados</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Asignado</th>
+    <th>Motivo</th>
+    <th>Descripcion</th>
+  </tr>
+
+<% @desasignados.each do |desasignado| %>
+  <tr>
+    <td><%=h desasignado.fecha %></td>
+    <td><%=h desasignado.asignado_id %></td>
+    <td><%=h desasignado.motivo_id %></td>
+    <td><%=h desasignado.descripcion %></td>
+    <td><%= link_to 'Show', desasignado %></td>
+    <td><%= link_to 'Edit', edit_desasignado_path(desasignado) %></td>
+    <td><%= link_to 'Destroy', desasignado, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New desasignado', new_desasignado_path %>
