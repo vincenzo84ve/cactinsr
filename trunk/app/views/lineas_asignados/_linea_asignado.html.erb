@@ -2,17 +2,15 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 %>
+<br />
+<div id="mensaje_parcial"><%= @mensaje %></div>
 
 <h3>Listando Activos Asignados</h3>
-
 <table>
   <tr>
     <th>Activo</th>
     <th>Modelo</th>
     <th>Serial</th>
-    <% if current_page?(:action => 'show') %>
-      <th>Activo</th>
-    <% end %>
   </tr>
 
 <% @asignados.each do |linea| %>

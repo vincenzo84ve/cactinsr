@@ -44,16 +44,22 @@ class LineasAsignadosController < ApplicationController
   # POST /lineas_asignados.xml
   def create
     @lineas_asignado = LineasAsignado.new(params[:lineas_asignado])
-    @lineas_asignado.esta_activo = true
-    @lineas_asignado.save
-    # Actualizar la existencia a  asignado true
-    @existencia = Existencia.find(@lineas_asignado.existencia_id)
-    @existencia.update_attribute(:es_asignado, true)
     @linea_asignado = LineasAsignado.new
     @linea_asignado.asignado_id = @lineas_asignado.asignado_id
     @asignados = LineasAsignado.find(:all, :conditions=>["asignado_id = ?", @linea_asignado.asignado_id])
-
-    render :partial => "linea_asignado"
+    if (!@lineas_asignado.existencia_id="")
+      @lineas_asignado.esta_activo = true
+      @lineas_asignado.save
+      # Actualizar la existencia a  asignado true
+      @existencia = Existencia.find(@lineas_asignado.existencia_id)
+      @existencia.update_attribute(:es_asignado, true)
+      render :partial => "linea_asignado"
+    else
+      @mensaje =  "No ha elegido un activo para ser asignado"
+      render :partial => "linea_asignado"
+      #render(:action => "new", :id => @linea_asignado.asignado_id, :notice => "No ha elegido un activo para ser asignado")
+      #redirect_to(:controller => "lineas_asignados", :action=>"new", :id => @linea_asignado.asignado_id, :notice => "No ha elegido un activo para ser asignado")
+    end
   end
 
   # PUT /lineas_asignados/1
@@ -77,8 +83,17 @@ class LineasAsignadosController < ApplicationController
   def destroy
     @lineas_asignado = LineasAsignado.find(params[:id])
     @lineas_asignado.destroy
+    @existencia = Existencia.find(@lineas_asignado.existencia_id)
+    @existencia.update_attribute(:es_asignado, false)
     @asignados = LineasAsignado.find(:all, :conditions => ["asignado_id = ?", @lineas_asignado.asignado_id])
 
     render :partial => "linea_asignado"
+  end
+
+  def procesar
+    #procesar el documento de asignación y activar todos los registros de existencias a asignados
+    @asignado = Asignado.find(:first, :conditions => ["id = ?", params[:id]])
+    @asignado.update_attribute(:esta_activo, true)
+    redirect_to :asignado, :notice => "Asignación Procesada con Éxito!"
   end
 end
