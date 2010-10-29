@@ -21,12 +21,14 @@
 </p>
 
 <%= link_to 'Back', asignados_path %>
+<script></script>
 
+===================================================================================================================
 
 <h3>Activos Asignados</h3>
 
 <% form_remote_for @linea_asignado, :url => {:controller => :lineas_asignados, :action => :create },
-							:complete => 'document.forms[0].reset();',
+							:complete => 'document.forms[0].reset();document.getElementById("lineas_asignado_existencia_id").value="";',
 							:update => 'lineas_asignados',
                                                         :html => {"name" => "form_asignado"} do |f| %>
   <%= f.error_messages %>
@@ -40,17 +42,21 @@
   <p>
     <%= f.hidden_field :asignado_id %>
   </p>
-  <p>
-    <%= f.label :esta_activo %><br />
-    <%= f.check_box :esta_activo %>
-  </p>
 
   <p>
-    <%= f.submit 'Create' %>
+  <table>
+    <tr>
+      <td>
+        <%= f.submit 'Create' %>
+      </td>
+      <td>
+        <%= button_to 'Procesar', :action => 'procesar', :id => @asignado.id %>
+      </td>
+    </tr>
+  </table>
   </p>
 <% end %>
 
-<%= link_to 'Back', asignados_path %>
 
 <div id='lineas_asignados'>
   <%= render(:partial => "linea_asignado")%>

@@ -6,6 +6,10 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
+#mensaje_parcial{
+    color: red;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;

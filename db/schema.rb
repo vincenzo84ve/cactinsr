@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101028040208) do
+ActiveRecord::Schema.define(:version => 20101029024946) do
 
   create_table "activos", :force => true do |t|
     t.string   "descripcion"
@@ -94,13 +94,7 @@ ActiveRecord::Schema.define(:version => 20101028040208) do
     t.boolean  "esta_activo"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "lineas_desasignados", :force => true do |t|
     t.integer  "desasignado_id"
-    t.integer  "existencia_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "marcas", :force => true do |t|
