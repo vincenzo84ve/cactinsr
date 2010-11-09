@@ -15,7 +15,7 @@
     <td><%=h asignado.persona.nombre_apellido %></td>
     <td><%=h asignado.esta_activo %></td>
     <td><%= link_to 'Show', asignado %></td>
-    <td><%= link_to("Editar", :controller => "lineas_asignados", :action => "new", :id => asignado.id) if asignado.esta_activo == false %></td>
+    <td><%= link_to("Editar", lineasasignado_url(:id => asignado.id)) if asignado.esta_activo == false  %></td>
   </tr>
 <% end %>
 </table>

@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :fecha %><br />
-    <%= f.date_select :fecha %>
+    <%= calendar_date_select_tag "asignado[fecha]", @asignado.fecha, :time => true %>
   </p>
   <p>
     <%= f.label :persona_id %><br />

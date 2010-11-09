@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :fecha %><br />
-    <%= f.datetime_select :fecha %>
+    <%= calendar_date_select_tag "factura[fecha]", @factura.fecha.to_s, :time => true %>
   </p>
   <p>
     <%= f.label :proveedor_id %><br />

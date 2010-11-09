@@ -28,14 +28,30 @@
 <%= link_to 'Back', proveedors_path %>
 
 <p>
-	<b>Facturas:</b>
+<b>Facturas:</b>
 </p>
-	<table>
-		<tr><td>Número</td><td>Fecha</td></tr>
-		<% @facturas.each do |fact| %>
-		<tr>
-			<td><%= fact.id %></td>
-			<td><%= fact.fecha %></td>
-		</tr>
-		<% end %>
-	</table>
+<table>
+  <tr>
+    <td>id</td><td>Número</td><td>Fecha</td><td>Estado</td><td></td>
+  </tr>
+  <% @facturas.each do |fact| %>
+  <tr>
+    <td><%= fact.id %></td>
+    <td><%= fact.factura %></td>
+    <td><%= fact.fecha %></td>
+    <td>
+      <% if (fact.estado == 'anulado') %>
+        <font color="red">Anulada</font>
+      <%  elsif (fact.estado == 'procesada') %>
+        <font color="green">Procesada</font>
+      <% else %>
+        <font color="blue">En proceso</font>
+      <%  end %>
+    </td>
+    <td>
+      <%= link_to 'Ver', fact %> | 
+      <%= link_to("Editar", :controller => "existencias", :action => "new", :id => fact.id) if fact.estado == "en proceso" %>
+    </td>
+  </tr>
+  <% end %>
+</table>

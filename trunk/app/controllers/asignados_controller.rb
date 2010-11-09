@@ -2,7 +2,7 @@ class AsignadosController < ApplicationController
   # GET /asignados
   # GET /asignados.xml
   def index
-    @asignados = Asignado.all
+    @asignados = Asignado.find(:all, :order => "id ASC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +45,8 @@ class AsignadosController < ApplicationController
     @asignado = Asignado.new(params[:asignado])
     @asignado.esta_activo = false
     @asignado.save
-    redirect_to(:controller => "lineas_asignados", :action => "new", :id => @asignado)
+    redirect_to lineasasignado_url(:id => @asignado.id)
+    #redirect_to(:controller => "lineas_asignados", :action => "new", :id => @asignado)
   end
 
   # PUT /asignados/1
