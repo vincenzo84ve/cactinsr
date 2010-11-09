@@ -1,0 +1,39 @@
+===================================================================================================================
+
+<h1>New existencia</h1>
+
+<% form_remote_for @existencia, :url => {:controller => :existencias, :action => :create },
+							:complete => 'document.forms[0].reset();',
+							:update => 'lineas_existencias',
+                                                        :html => {"name" => "form_existencia"} do |f| %>
+
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :activo_id %><br />
+    <%= text_field_tag "activo_id", nil, :disabled => "disabled" %>
+    <%= f.hidden_field :activo_id %>
+    <%= link_to "Producto", options = {:action  => "buscador_activos", :controller => "activos", :id => "all"} , html_options = {"title" => "Ejemplo", "onclick" => "this.blur(); Modalbox.show(this.href, {title: 'Welcome to ModalBox demo', width: 600}); return false;"} %>  <br />
+  </p>
+  <p>
+    <%= label_tag "descripcion", "Descripcion" %><br />
+    <%= text_field_tag "descripcion", nil, :disabled => "disabled" %>
+  </p>
+  <p>
+    <%= f.hidden_field :factura_id %>
+  </p>
+  <p>
+    <div id="attr" style="display:none;">
+      <%= label_tag "serial", "Serial", :id => "lblAttr" %>
+      <%= text_field_tag "atributo", nil %>
+    </div>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+<%= button_to 'Procesar', :action => 'procesar', :id => @factura.id %>
+
+<div id='lineas_existencias'>
+  <%= render(:partial => "linea_existencia")%>
+</div>

@@ -18,7 +18,7 @@
     <td><%=h linea.existencia.activo.descripcion %></td>
     <td><%=h linea.existencia.activo.modelo %></td>
     <td><%=h linea.existencia.serial %></td>
-    <td><%=h link_to_remote 'Borrar', :update => 'lineas_asignados', :url => lineas_asignado_url(:id => linea.id), :method => :delete, :confirm => "¿Esta seguro?" %></td>
+    <td><%=h link_to_remote('Borrar', :update => 'lineas_asignados', :url => lineas_asignado_url(:id => linea.id), :method => :delete, :confirm => "¿Esta seguro?") if (current_page?(:controller => 'lineas_asignados', :action => 'new') || current_page?(:controller => 'lineas_asignados', :action => 'create') || current_page?(:controller => 'lineas_asignados', :action => 'destroy')) %></td>
   </tr>
 <% end %>
 </table>

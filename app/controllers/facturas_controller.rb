@@ -44,7 +44,12 @@ class FacturasController < ApplicationController
   def create
     @factura = Factura.new(params[:factura])
     @factura.save
-    redirect_to(:controller => "existencias", :action => "new", :id => @factura)
+    redirect_to existencia_url(:id => @factura.id)
+    #redirect_to "existencias/new/#{@factura.id}"
+    #redirect_to(:controller => "existencias", :action => "new/#{@factura.id}")
+    #render_component :controller => "existencias", :action => "new"
+
+    #render :partial => "existencias/new", :collection => @factura#, :locals => { :id = @factura }
   end
 
   # PUT /facturas/1

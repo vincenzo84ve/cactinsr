@@ -9,13 +9,22 @@
 </p>
 
 <p>
+  <b>Nombre:</b>
+  <%=h @asignado.persona.nombre_apellido %>
+</p>
+
+<p>
+  <b>Coordinación:</b>
+  <%=h @asignado.persona.carea.cgeneral.nombre %><br />
+  <b>Área:</b>
+  <%=h @asignado.persona.carea.nombre %>
+</p>
+<p>
   <b>Esta activo:</b>
   <%=h @asignado.esta_activo %>
 </p>
 
-
-<%= link_to 'Edit', edit_asignado_path(@asignado) %> |
-<%= link_to 'Back', asignados_path %>
+<%= link_to 'Volver', asignados_path %>
 
 <div id='lineas_asignados'>
   <%= render(:partial => "lineas_asignados/linea_asignado")%>

@@ -2,12 +2,12 @@
 
 <table>
   <tr>
-    <th>Cedula</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Cargo</th>
-    <th>Carea</th>
-    <th>Ubicacione</th>
+    <th><%= sortable "Cedula" %></th>
+    <th><%= sortable "Nombre" %></th>
+    <th><%= sortable "Apellido" %></th>
+    <th><%= sortable "Cargo" %></th>
+    <th><%= sortable "Carea_id", "Área" %></th>
+    <th><%= sortable "Ubicacione_id", "Ubicación" %></th>
   </tr>
 
 <% @personas.each do |persona| %>

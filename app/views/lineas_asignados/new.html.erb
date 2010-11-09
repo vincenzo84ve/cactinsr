@@ -28,9 +28,9 @@
 <h3>Activos Asignados</h3>
 
 <% form_remote_for @linea_asignado, :url => {:controller => :lineas_asignados, :action => :create },
-							:complete => 'document.forms[0].reset();document.getElementById("lineas_asignado_existencia_id").value="";',
-							:update => 'lineas_asignados',
-                                                        :html => {"name" => "form_asignado"} do |f| %>
+				    :complete => 'document.forms[0].reset();document.getElementById("lineas_asignado_existencia_id").value="";',
+				    :update => 'lineas_asignados',
+                                    :html => {"name" => "form_asignado"} do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -48,6 +48,7 @@
     <tr>
       <td>
         <%= f.submit 'Create' %>
+        <% end %>
       </td>
       <td>
         <%= button_to 'Procesar', :action => 'procesar', :id => @asignado.id %>
@@ -55,7 +56,6 @@
     </tr>
   </table>
   </p>
-<% end %>
 
 
 <div id='lineas_asignados'>

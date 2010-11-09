@@ -43,22 +43,26 @@ class LineasAsignadosController < ApplicationController
   # POST /lineas_asignados
   # POST /lineas_asignados.xml
   def create
+    #Instancio el obejto con los datos colectados del formulario
     @lineas_asignado = LineasAsignado.new(params[:lineas_asignado])
+
+    #Instancio un objeto nuevo para ser enviado al formulario y asigno el id del documento de asignación
     @linea_asignado = LineasAsignado.new
     @linea_asignado.asignado_id = @lineas_asignado.asignado_id
-    @asignados = LineasAsignado.find(:all, :conditions=>["asignado_id = ?", @linea_asignado.asignado_id])
-    if (!@lineas_asignado.existencia_id="")
-      @lineas_asignado.esta_activo = true
-      @lineas_asignado.save
-      # Actualizar la existencia a  asignado true
-      @existencia = Existencia.find(@lineas_asignado.existencia_id)
-      @existencia.update_attribute(:es_asignado, true)
-      render :partial => "linea_asignado"
-    else
+
+
+    #Verifico si realmente se ha elegido un activo para ser asignado
+    if (@lineas_asignado.existencia_id.blank?)
       @mensaje =  "No ha elegido un activo para ser asignado"
       render :partial => "linea_asignado"
-      #render(:action => "new", :id => @linea_asignado.asignado_id, :notice => "No ha elegido un activo para ser asignado")
-      #redirect_to(:controller => "lineas_asignados", :action=>"new", :id => @linea_asignado.asignado_id, :notice => "No ha elegido un activo para ser asignado")
+    else
+      @lineas_asignado.esta_activo = true
+      @lineas_asignado.save
+      @existencia = Existencia.find(:first, :conditions => ["id = ?", @lineas_asignado.existencia_id])
+      @existencia.update_attribute(:es_asignado, true)
+      #Busco todos lo registros asociados a la asignación actual
+      @asignados = LineasAsignado.find(:all, :conditions=>["asignado_id = ?", @linea_asignado.asignado_id])
+      render :partial => "linea_asignado"
     end
   end
 
