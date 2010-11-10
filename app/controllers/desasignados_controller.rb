@@ -26,6 +26,7 @@ class DesasignadosController < ApplicationController
   def new
     @motivos = Motivo.find(:all)
     @desasignado = Desasignado.new
+    @desasignado.asignado_id = params[:id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,16 +43,19 @@ class DesasignadosController < ApplicationController
   # POST /desasignados.xml
   def create
     @desasignado = Desasignado.new(params[:desasignado])
+    @desasignado.save
+    #lineasdesasignado_url = map.lineasdesasignado 'lineas_revocados/new/:id', :controller => 'lineas_asignados', :action => 'new_desasignados'
+    redirect_to lineasdesasignado_url(:id => @desasignado.id)
 
-    respond_to do |format|
-      if @desasignado.save
-        format.html { redirect_to(@desasignado, :notice => 'Desasignado was successfully created.') }
-        format.xml  { render :xml => @desasignado, :status => :created, :location => @desasignado }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @desasignado.errors, :status => :unprocessable_entity }
-      end
-    end
+#    respond_to do |format|
+#      if @desasignado.save
+#        format.html { redirect_to(@desasignado, :notice => 'Desasignado was successfully created.') }
+#        format.xml  { render :xml => @desasignado, :status => :created, :location => @desasignado }
+#      else
+#        format.html { render :action => "new" }
+#        format.xml  { render :xml => @desasignado.errors, :status => :unprocessable_entity }
+#      end
+#    end
   end
 
   # PUT /desasignados/1
@@ -80,5 +84,16 @@ class DesasignadosController < ApplicationController
       format.html { redirect_to(desasignados_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+  def revocar
+    @lineas_asignado = LineasAsignado.find(params[:id])
+    @lineas_asignado.esta_activo = false
+    @existencia = Existencia.find(@lineas_asignado.existencia_id)
+    @existencia.update_attribute(:es_asignado, false)
+    @asignados = LineasAsignado.find(:all, :conditions => ["asignado_id = ?", @lineas_asignado.asignado_id])
+
+    render :partial => "linea_asignado"
   end
 end

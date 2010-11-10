@@ -5,11 +5,12 @@
 
   <p>
     <%= f.label :fecha %><br />
-    <%= f.date_select :fecha %>
+    <%= calendar_date_select_tag "desasignado[fecha]", Date.today("GREGORIAN").to_s+" 00:00", :time => true %>
   </p>
   <p>
-    <%= f.label :asignado_id %><br />
-    <%= f.text_field :asignado_id %>
+    <%= f.label :asignado_id, "Asignación:" %><br />
+    <%= text_field_tag :asignado_id, @desasignado.asignado_id, :disabled => true %>
+    <%= f.hidden_field :asignado_id %>
   </p>
   <p>
     <%= f.label :motivo_id %><br />

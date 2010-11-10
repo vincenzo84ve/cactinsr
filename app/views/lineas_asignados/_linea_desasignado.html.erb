@@ -1,0 +1,29 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<br />
+<div id="mensaje_parcial"><%= @mensaje %></div>
+
+<h3>Listando Activos Asignados</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Activo</th>
+    <th>Modelo</th>
+    <th>Serial</th>
+  </tr>
+
+
+<% form_tag revocar_lineas_asignados_path, :method => :put do %>
+  <% for asignado in @asignados %>
+    <tr>
+      <td><%= check_box_tag "revocados_ids[]", asignado.id %></td>
+      <td><%= asignado.existencia.activo.descripcion %></td>
+      <td><%= asignado.existencia.activo.modelo %></td>
+      <td><%= asignado.existencia.serial%></td>
+    </tr>
+  <% end %>
+</table><br />
+  <%= submit_tag "Procesar" %>
+<% end %>

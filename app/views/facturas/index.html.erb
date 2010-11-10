@@ -16,7 +16,7 @@
     <td><%=h factura.estado %></td>
     <td><%= link_to 'Ver', factura %></td>
     <td><%= link_to('Anular', "facturas/anular/#{factura.id}", :confirm => '¿Esta seguro?') if factura.estado == "procesada" %></td>
-    <td><%= link_to("Editar", :controller => "existencias", :action => "new", :id => factura.id) if factura.estado == "en proceso" %></td>
+    <td><%= link_to("Editar", existencia_url(:id => factura.id)) if factura.estado == "en proceso" %></td>
   </tr>
 <% end %>
 </table>

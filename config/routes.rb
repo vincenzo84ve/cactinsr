@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :motivos
 
-  map.resources :lineas_asignados
+#  map.resources :lineas_asignados
 
   map.resources :despachos
 
@@ -32,6 +32,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :facturas
 
   map.resources :proveedors
+
+  map.resources :lineas_asignados, :collection => { :revocar => :put }
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -73,7 +75,9 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
   map.existencia 'facturas/new/:id', :controller => 'existencias', :action => 'new'
+  map.revocado 'revocados/new/:id', :controller => 'desasignados', :action => 'new'
   map.lineasasignado 'asignados/new/:id', :controller => 'lineas_asignados', :action => 'new'
+  map.lineasdesasignado 'lineas_revocados/new/:id', :controller => 'lineas_asignados', :action => 'new_desasignados'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
