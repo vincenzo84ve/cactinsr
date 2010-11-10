@@ -1,0 +1,31 @@
+<p>
+  <b>Fecha:</b>
+  <%=h @desasignado.fecha %>
+</p>
+
+<p>
+  <b>Persona:</b>
+  <%=h @desasignado.asignado.persona_id %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%=h @desasignado.asignado.persona.nombre_apellido %>
+</p>
+
+<p>
+  <b>Coordinación:</b>
+  <%=h @desasignado.asignado.persona.carea.cgeneral.nombre %><br />
+  <b>Área:</b>
+  <%=h @desasignado.asignado.persona.carea.nombre %>
+</p>
+
+<%= link_to 'Back', asignados_path %>
+
+===================================================================================================================
+
+<h3>Activos Asignados</h3>
+
+<div id='lineas_desasignados'>
+  <%= render(:partial => "linea_desasignado")%>
+</div>

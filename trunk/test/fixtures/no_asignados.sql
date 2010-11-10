@@ -1,0 +1,1 @@
+select existencias.id as eid, activos.id as aid, activos.descripcion, marcas.descripcion, existencias.serial, existencias.es_asignado from activos, existencias, marcas where activos.id = existencias.activo_id and activos.marca_id = marcas.id and existencias.es_asignado=false and activos.es_equipo=true;

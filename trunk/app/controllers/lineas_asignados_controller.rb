@@ -100,4 +100,31 @@ class LineasAsignadosController < ApplicationController
     @asignado.update_attribute(:esta_activo, true)
     redirect_to :asignado, :notice => "Asignación Procesada con Éxito!"
   end
+
+  def new_desasignados
+    #Localizo el registro de desasignación
+    @desasignado = Desasignado.find(:first, :conditions => ["id = ?", params[:id]])
+    @asignados = LineasAsignado.find(:all, :conditions => ["asignado_id = ?", @desasignado.asignado_id])
+#    @linea_asignado = LineasAsignado.new
+#    @linea_asignado.asignado_id = @desasignado.id
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @lineas_asignado }
+    end
+  end
+
+  #def revocar
+#    @mensaje =  "Activo revocado de la asignación"
+#    @asignados = LineasAsignado.find(:all, :conditions => ["asignado_id = ?",params[:id]])
+#    render :partial => "linea_desasignado"
+#  end
+
+  def revocar
+    flash[:notice] = "Revocado el activo #{params[:revocados_ids]}"
+    #render :partial => "linea_desasignado"
+    redirect_to asignados_path
+    #LineasAsignado.update_all(["esta_activo=?", false], :id => params[:revocados_ids])
+    #LineasAsignado.update_all(["desasignado_id=?", params[:id_desasignado]], :id => params[:revocados_ids])
+  end
 end
