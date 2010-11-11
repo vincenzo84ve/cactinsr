@@ -42,3 +42,6 @@ end
 
 # Formato de Fecha calendar_date_select
 CalendarDateSelect.format = :finnish
+
+# Acitvar la gema will_paginate para la páginación de listados
+require "will_paginate"

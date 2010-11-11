@@ -46,7 +46,6 @@ class AsignadosController < ApplicationController
     @asignado.esta_activo = false
     @asignado.save
     redirect_to lineasasignado_url(:id => @asignado.id)
-    #redirect_to(:controller => "lineas_asignados", :action => "new", :id => @asignado)
   end
 
   # PUT /asignados/1

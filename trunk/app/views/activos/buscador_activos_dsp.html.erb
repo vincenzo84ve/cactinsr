@@ -1,0 +1,6 @@
+<%= text_field_tag :descripcion %>
+<%= observe_field( :descripcion, :frequency=> 0.1, :update=>"lineas_busqueda", :url=>{:action=>:buscador_dsp }, :with=>"descripcion" )%>
+
+<div id="lineas_busqueda">
+  <%= render(:partial => "lineas_buscador_dsp") %>
+</div>

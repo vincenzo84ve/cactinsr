@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :lineas_despachos
+
   map.resources :lineas_desasignados
 
   map.resources :desasignados
@@ -77,6 +79,7 @@ ActionController::Routing::Routes.draw do |map|
   map.existencia 'facturas/new/:id', :controller => 'existencias', :action => 'new'
   map.revocado 'revocados/new/:id', :controller => 'desasignados', :action => 'new'
   map.lineasasignado 'asignados/new/:id', :controller => 'lineas_asignados', :action => 'new'
+  map.lineasdespacho 'despachos/new/:id', :controller => 'lineas_despachos', :action => 'new'
   map.lineasdesasignado 'lineas_revocados/new/:id', :controller => 'lineas_asignados', :action => 'new_desasignados'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

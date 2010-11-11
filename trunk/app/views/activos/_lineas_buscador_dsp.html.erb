@@ -1,0 +1,33 @@
+<script>
+  function pon_prefijo(val) {
+    parent.opener.document.new_existencia.activo_descripcion.value = val
+    parent.window.close();
+  }
+</script>
+
+<h1>Listing activos</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Serial</th>
+  </tr>
+
+<% @resultados.each do |activo| %>
+  <tr>
+    <td><%=h activo.activo %></td>
+    <td><%=h activo.marcas %></td>
+    <td><%=h activo.modelo %></td>
+    <td><%=h activo.serial %></td>
+    <td><a onclick="Modalbox.hide({afterHide: function() {
+                                        document.form_despacho.activo_id.value='<%= activo.id %>';
+                                        document.form_despacho.lineas_despacho_existencia_id.value='<%= activo.id %>';
+                                        document.form_despacho.descripcion.value='<%= activo.activo %>';
+                                        document.getElementById('attr').style.display = '';
+                                    }}); return false;" title = "Usar & Cerrar" href="#">Usar</a></td>
+    <td><%= link_to 'Show', activo %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,50 @@
+<p>
+  <b>Persona:</b>
+  <%=h @despacho.persona_id %>
+</p>
+
+<p>
+  <b>Persona:</b>
+  <%=h @despacho.persona.nombre_apellido %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%=h @despacho.fecha %>
+</p>
+
+
+<%= link_to 'Edit', edit_despacho_path(@despacho) %> |
+<%= link_to 'Back', despachos_path %>
+
+===================================================================================================================
+
+<h1>New lineas_despacho</h1>
+
+<% form_remote_for @linea_despacho, :url => {:controller => :lineas_despachos, :action => :create },
+				    :complete => 'document.forms[0].reset();document.getElementById("lineas_despacho_existencia_id").value="";',
+				    :update => 'lineas_despachos',
+                                    :html => {"name" => "form_despacho"} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :existencia_id %><br />
+    <%= text_field_tag "activo_id", nil, :disabled => "disabled" %><br />
+    <%= text_field_tag "descripcion", nil, :disabled => "disabled" %>
+    <%= f.hidden_field :existencia_id %> <%= link_to "Producto", options = {:action  => "buscador_activos_dsp", :controller => "activos", :id => "all"} , html_options = {"title" => "Buscador", "onclick" => "this.blur(); Modalbox.show(this.href, {title: 'Buscador de Activos', width: 600}); return false;"} %>  <br />
+  </p>
+  <p>
+    <%= f.hidden_field :despacho_id %>
+  </p>
+  <p>
+    <%= f.label :cantidad %><br />
+    <%= f.text_field :cantidad %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<div id='lineas_despachos'>
+  <%= render(:partial => "linea_despacho")%>
+</div>
