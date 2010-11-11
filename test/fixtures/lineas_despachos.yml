@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  existencia_id: 1
+  depacho_id: 1
+  cantidad: 1
+  esta_activo: false
+
+two:
+  existencia_id: 1
+  depacho_id: 1
+  cantidad: 1
+  esta_activo: false

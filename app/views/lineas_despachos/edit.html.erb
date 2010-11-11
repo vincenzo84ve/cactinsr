@@ -1,0 +1,28 @@
+<h1>Editing lineas_despacho</h1>
+
+<% form_for(@lineas_despacho) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :existencia_id %><br />
+    <%= f.text_field :existencia_id %>
+  </p>
+  <p>
+    <%= f.label :depacho_id %><br />
+    <%= f.text_field :depacho_id %>
+  </p>
+  <p>
+    <%= f.label :cantidad %><br />
+    <%= f.text_field :cantidad %>
+  </p>
+  <p>
+    <%= f.label :esta_activo %><br />
+    <%= f.check_box :esta_activo %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @lineas_despacho %> |
+<%= link_to 'Back', lineas_despachos_path %>

@@ -25,6 +25,7 @@ class DespachosController < ApplicationController
   # GET /despachos/new.xml
   def new
     @despacho = Despacho.new
+    @personas = Persona.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,16 +42,9 @@ class DespachosController < ApplicationController
   # POST /despachos.xml
   def create
     @despacho = Despacho.new(params[:despacho])
-
-    respond_to do |format|
-      if @despacho.save
-        format.html { redirect_to(@despacho, :notice => 'Despacho was successfully created.') }
-        format.xml  { render :xml => @despacho, :status => :created, :location => @despacho }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @despacho.errors, :status => :unprocessable_entity }
-      end
-    end
+    @despacho.esta_activo = false
+    @despacho.save
+    redirect_to lineasdespacho_url(:id => @despacho.id)
   end
 
   # PUT /despachos/1

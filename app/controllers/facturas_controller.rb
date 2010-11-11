@@ -2,7 +2,8 @@ class FacturasController < ApplicationController
   # GET /facturas
   # GET /facturas.xml
   def index
-    @facturas = Factura.all
+    #flash[:notice] = params[:page].to_f.is_a?(Numeric) ? params[:page] : 1
+    @facturas = Factura.paginate :page => (/[0-9]+/ === params[:page] ? params[:page] : 1 ? params[:page] : 1), :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb

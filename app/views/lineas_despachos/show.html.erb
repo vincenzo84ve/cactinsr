@@ -1,0 +1,23 @@
+<p>
+  <b>Existencia:</b>
+  <%=h @lineas_despacho.existencia_id %>
+</p>
+
+<p>
+  <b>Depacho:</b>
+  <%=h @lineas_despacho.depacho_id %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%=h @lineas_despacho.cantidad %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%=h @lineas_despacho.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_lineas_despacho_path(@lineas_despacho) %> |
+<%= link_to 'Back', lineas_despachos_path %>
