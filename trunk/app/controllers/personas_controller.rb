@@ -1,10 +1,11 @@
 class PersonasController < ApplicationController
   helper_method :sort_column, :sort_direction
+  
   # GET /personas
   # GET /personas.xml
   def index
     #@personas = Persona.all
-    @personas = Persona.find(:all, :order => params[:sort] + ' ' + params[:direction].to_s)
+    @personas = Persona.find(:all, :order => sort_column + ' ' + sort_direction)
     #@personas = Persona.order(params[:sort])
 
     respond_to do |format|
@@ -90,12 +91,12 @@ class PersonasController < ApplicationController
 
   private
   def sort_column
-    params[:sort] || "cedula"
-    #Persona.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    #params[:sort] || "cedula"
+    Persona.column_names.include?(params[:sort]) ? params[:sort] : "cedula"
   end
 
   def sort_direction
-    params[:direction] || "asc"
-    #%w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    #params[:direction] || "asc"
+    %w[asc desc].include?(params[:direction]) ?  params[:direction].to_s : "asc"
   end  
 end

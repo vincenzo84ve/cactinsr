@@ -10,14 +10,14 @@
   <tr>
     <th>Activo</th>
     <th>Modelo</th>
-    <th>Serial</th>
+    <th>Cantidad</th>
   </tr>
 
 <% @despachos.each do |linea| %>
   <tr>
     <td><%=h linea.existencia.activo.descripcion %></td>
     <td><%=h linea.existencia.activo.modelo %></td>
-    <td><%=h linea.existencia.serial %></td>
+    <td><%=h linea.existencia.cantidad %></td>
     <td><%=h link_to_remote('Borrar', :update => 'lineas_asignados', :url => lineas_asignado_url(:id => linea.id), :method => :delete, :confirm => "¿Esta seguro?") if (current_page?(:controller => 'lineas_asignados', :action => 'new') || current_page?(:controller => 'lineas_asignados', :action => 'create') || current_page?(:controller => 'lineas_asignados', :action => 'destroy')) %></td>
     <td><%=h link_to_remote('Revocar', :update => 'lineas_asignados', :url => desasignado_url(:id => linea.id), :method => :revocar, :confirm => "¿Esta seguro?") if (current_page?(:controller => 'lineas_asignados', :action => 'new') || current_page?(:controller => 'lineas_asignados', :action => 'create') || current_page?(:controller => 'lineas_asignados', :action => 'destroy')) %></td>
   </tr>

@@ -44,36 +44,46 @@ class LineasDespachosController < ApplicationController
   # POST /lineas_despachos.xml
   def create
     #Instancio el obejto con los datos colectados del formulario
-    @lineas_despacho = LineasAsignado.new(params[:lineas_asignado])
+    @lineas_despacho = LineasDespacho.new(params[:lineas_despacho])
 
     #Instancio un objeto nuevo para ser enviado al formulario y asigno el id del documento de asignación
-    @linea_despacho = LineasAsignado.new
-    @linea_despacho.asignado_id = @lineas_despacho.despacho_id
+    @linea_despacho = LineasDespacho.new
+    @linea_despacho.despacho_id = @lineas_despacho.despacho_id
 
 
     #Verifico si realmente se ha elegido un activo para ser asignado
     if (@lineas_despacho.existencia_id.blank?)
       @mensaje =  "No ha elegido un producto para ser despachado"
-      render :partial => "linea_despacho"
-    else
-      @lineas_despacho.esta_activo = true
-      @lineas_despacho.save
-      @existencia = Existencia.find(:first, :conditions => ["id = ?", @lineas_despacho.existencia_id])
-      @existencia.update_attribute(:cantidad, (@existencia.cantidad - @lineas_despacho.cantidad))
       #Busco todos lo registros asociados a la asignación actual
       @despachos = LineasDespacho.find(:all, :conditions=>["despacho_id = ?", @linea_despacho.despacho_id])
       render :partial => "linea_despacho"
-    end
-
-    respond_to do |format|
-      if @lineas_despacho.save
-        format.html { redirect_to(@lineas_despacho, :notice => 'LineasDespacho was successfully created.') }
-        format.xml  { render :xml => @lineas_despacho, :status => :created, :location => @lineas_despacho }
+    else
+      # Verifico si la cantidad a ser despachada no es mayor a la diponible
+      if (@lineas_despacho.cantidad <= (Existencia.find(:first, :conditions => ["id = ?", @lineas_despacho.existencia_id])).saldo)
+        @lineas_despacho.esta_activo = true
+        @lineas_despacho.save
+        @existencia = Existencia.find(:first, :conditions => ["id = ?", @lineas_despacho.existencia_id])
+        @existencia.update_attribute(:cantidad, (@existencia.saldo - @lineas_despacho.cantidad))
+        #Busco todos lo registros asociados a la asignación actual
+        @despachos = LineasDespacho.find(:all, :conditions=>["despacho_id = ?", @linea_despacho.despacho_id])
+        render :partial => "linea_despacho"
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @lineas_despacho.errors, :status => :unprocessable_entity }
+        @mensaje = "La cantidad solicitada es mayor a la disponible en existencia"
+        #Busco todos lo registros asociados a la asignación actual
+        @despachos = LineasDespacho.find(:all, :conditions=>["despacho_id = ?", @linea_despacho.despacho_id])
+        render :partial => "linea_despacho"
       end
     end
+
+#    respond_to do |format|
+#      if @lineas_despacho.save
+#        format.html { redirect_to(@lineas_despacho, :notice => 'LineasDespacho was successfully created.') }
+#        format.xml  { render :xml => @lineas_despacho, :status => :created, :location => @lineas_despacho }
+#      else
+#        format.html { render :action => "new" }
+#        format.xml  { render :xml => @lineas_despacho.errors, :status => :unprocessable_entity }
+#      end
+#    end
   end
 
   # PUT /lineas_despachos/1
