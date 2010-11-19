@@ -2,14 +2,15 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Persona</th>
-    <th>Existencia</th>
     <th>Fecha</th>
   </tr>
 
 <% @despachos.each do |despacho| %>
   <tr>
-    <td><%=h despacho.persona_id %></td>
+    <td><%=h despacho.id  %></td>
+    <td><%=h despacho.persona.nombre_apellido %></td>
     <td><%=h despacho.fecha %></td>
     <td><%= link_to 'Show', despacho %></td>
     <td><%= link_to 'Edit', edit_despacho_path(despacho) %></td>

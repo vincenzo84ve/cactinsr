@@ -12,7 +12,7 @@
     <th>Descripcion</th>
     <th>Marca</th>
     <th>Modelo</th>
-    <th>Serial</th>
+    <th>Existencia</th>
   </tr>
 
 <% @resultados.each do |activo| %>
@@ -20,14 +20,13 @@
     <td><%=h activo.activo %></td>
     <td><%=h activo.marcas %></td>
     <td><%=h activo.modelo %></td>
-    <td><%=h activo.serial %></td>
+    <td align="right"><%=h activo.cantidad %></td>
     <td><a onclick="Modalbox.hide({afterHide: function() {
                                         document.form_despacho.activo_id.value='<%= activo.id %>';
                                         document.form_despacho.lineas_despacho_existencia_id.value='<%= activo.id %>';
                                         document.form_despacho.descripcion.value='<%= activo.activo %>';
-                                        document.getElementById('attr').style.display = '';
+                                        document.form_despacho.lineas_despacho_cantidad.focus();
                                     }}); return false;" title = "Usar & Cerrar" href="#">Usar</a></td>
-    <td><%= link_to 'Show', activo %></td>
   </tr>
 <% end %>
 </table>

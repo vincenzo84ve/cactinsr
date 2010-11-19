@@ -68,7 +68,3 @@ a:hover { color: #fff; background-color:#000; }
 .pretty th .desc {
   background-image: url(/images/order/go-down.png);
 }
-
-.current asc {
-    background-image: url(/images/order/go-up.png);
-}
