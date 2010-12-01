@@ -5,16 +5,57 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%=  %> <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <link rel="shortcut icon" href="imagenes/invepal.png" />
   <%= stylesheet_link_tag 'modalbox' %>
+  <%= stylesheet_link_tag 'estilo' %>
   <%= javascript_include_tag 'prototype', 'effects', 'dragdrop', 'defaults', 'controls', 'modalbox', 'lib/builder' %>
   <%= calendar_date_select_includes "red" %>
 </head>
 <body>
+<!-- Cuerpo -->
+<center>
+  <table class="pagina" align="center" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="4">
+        <!-- Cintillo -->
+        <%= render(:partial => "layouts/cintillo") %>
+        <!-- Fin Cintillo -->
+      </td>
+    </tr>
 
-<p style="color: green"><%= notice %></p>
+    <tr>
+      <td class="sombra_izq"></td>
+      <td class="centro" rowspan="2" width="20%" valign="top">
+        <!-- Menu de la aplicación -->
+        <%= render(:partial => "layouts/menu") %>
+        <!-- Fin Menu de la aplicación -->
+      </td>
+      <td class="centro" height="20%">
+        <!-- Datos de login del usuario -->
+      </td>
+      <td class="sombra_der"></td>
+    </tr>
 
-<%= yield %>
+    <tr>
+      <td class="sombra_izq"></td>
+      <td class="centro" valign="middle">
+        <!-- Contenido de la Aplicación -->
+        <p style="color: green"><%= notice %></p>
+
+        <%= yield %>
+      </td>
+      <td class="sombra_der"></td>
+    </tr>
+
+    <tr>
+      <td colspan="4">
+        <!-- Pie de Página -->
+        <%= render(:partial => "layouts/pie") %>
+        <!-- Fin pie de página -->
+      </td>
+    </tr>
+  </table>
+</center>
 
 </body>
 </html>

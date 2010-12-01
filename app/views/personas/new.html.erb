@@ -21,11 +21,11 @@
   </p>
   <p>
     <%= f.label :carea_id %><br />
-    <%= collection_select (:persona, :carea_id, @careas, :id, :nombre) %>
+    <%= collection_select(:persona, :carea_id, @careas, :id, :nombre) %>
   </p>
   <p>
     <%= f.label :ubicacione_id %><br />
-    <%= collection_select (:persona, :ubicacione_id, @ubicaciones, :id, :descripcion) %>
+    <%= collection_select(:persona, :ubicacione_id, @ubicaciones, :id, :descripcion) %>
   </p>
   <p>
     <%= f.submit 'Create' %>

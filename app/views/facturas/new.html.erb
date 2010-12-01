@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :fecha %><br />
-    <%= calendar_date_select_tag "factura[fecha]", Date.today("GREGORIAN").to_s+" 00:00", :time => true %>
+    <%= calendar_date_select_tag "factura[fecha]" %>
   </p>
   <p>
     <%= f.label :proveedor_id %><br />
