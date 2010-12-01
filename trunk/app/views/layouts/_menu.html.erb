@@ -1,0 +1,109 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<div style="width:184px; height:400px">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="headerbar">
+            Acciones
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="menu_lateral">
+          <ul>
+            <li>
+              <div class="menu_inactivo" id="menu_inicio" onMouseOver="prendido(this.id)" onmouseout="apagado(this.id)" style="cursor:pointer">
+                <a href="index.php" style="text-decoration:none">Inicio</a>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu_inactivo" id="menu_requerimientos" onMouseOver="prendido(this.id)" onmouseout="apagado(this.id)" style="cursor:pointer">
+                <a href="?sec=requerimientos_vis" style="text-decoration:none">Activos/Insumos -></a>
+              </div>
+              <!--Submenu-->
+              <ul>
+                <li class="activa_border">
+                  <%= link_to 'Unidades de Medida', options = {:controller => 'umedidas'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+                <li class="activa_border">
+                  <%= link_to 'Activos', options = {:controller => 'activos'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="menu_inactivo" id="menu_servicios" onMouseOver="prendido(this.id)" onmouseout="apagado(this.id)" style="cursor:pointer">
+                <a href="?sec=servicios_vis" style="text-decoration:none">Entradas -></a>
+              </div>
+              <!--Submenu-->
+              <ul>
+                <li class="activa_border">
+                  <%= link_to 'Proveedores', options = {:controller => 'proveedors'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+                <li class="activa_border">
+                  <%= link_to 'Facturas', options = {:controller => 'facturas'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="menu_inactivo" id="menu_equipos" onMouseOver="prendido(this.id)" onmouseout="apagado(this.id)" style="cursor:pointer">
+                <a href="?sec=equipos_vis" style="text-decoration:none">Salidas -></a>
+              </div>
+              <!--Submenu-->
+              <ul>
+                <li class="activa_border">
+                  <%= link_to 'Asignaciones', options = {:controller => 'asignados'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+                <li class="activa_border">
+                  <%= link_to 'Despachos', options = {:controller => 'despachos'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="menu_inactivo" id="menu_personal" onMouseOver="prendido(this.id)" onmouseout="apagado(this.id)" style="cursor:pointer">
+                <a href="?sec=personal_vis">Personal -></a>
+              </div>
+              <!--Submenu-->
+              <ul>
+                <li class="activa_border">
+                  <%= link_to 'Ubicaciones', options = {:controller => 'ubicaciones'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+                <li class="activa_border">
+                  <%= link_to 'Coordinación General', options = {:controller => 'cgenerals'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+                <li class="activa_border">
+                  <%= link_to 'Coordinación de Área', options = {:controller => 'careas'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+                <li class="activa_border">
+                  <%= link_to 'Personal', options = {:controller => 'personas'}, html_options = {"style" => "text-decoration:none"} %>
+                </li>
+              </ul>
+            </li>
+
+            <%#*<li>%>
+                <%#*<div class="menu_inactivo" id="menu_coordinaciones" onMouseOver="prendido(this.id)" onmouseout="apagado(this.id)" style="cursor:pointer">%>
+                    <%#*<a href="#" style="text-decoration:none">Coordinaciones -></a>%>
+                <%#*</div>%>
+                <%#*<!--Submenu-->%>
+                <%#*<ul>%>
+                    <%#*<li class="activa_border">%>
+                        <%#*<a href="?sec=area_vis" style="text-decoration:none">&Aacute;reas</a>%>
+                    <%#*</li>%>
+                    <%#*<li class="activa_border">%>
+                        <%#*<a href="?sec=coordinacion_vis" style="text-decoration:none">Coordinaciones Generales</a>%>
+                    <%#*</li>%>
+                <%#*</ul>%>
+            <%#*</li>%>
+
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
