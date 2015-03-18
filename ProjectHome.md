@@ -1,0 +1,1 @@
+Sistema para el control de Activo e Insumos del área de soporte técnico de cualquier empresa, desarrollo en ruby on rails esto representa la segunda fase del proyecto [servicenter](http://code.google.com/p/servicecenter-invepal/) (el cual será migrado en poco tiempo a rails con algunas mejoras, luego de 1 año de maduración, que aún no han sido publicadas en la versión php)
